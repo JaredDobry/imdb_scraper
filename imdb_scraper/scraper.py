@@ -7,7 +7,7 @@ import time
 
 
 MAX_ID = 1160419  # Dune (2021)
-MIN_ID = 73629  # The Rocky Horror Picture Show (1975)
+MIN_ID = 1
 FILE_PATH = "movie_data.txt"
 BLACKLIST_PATH = "blacklist.txt"
 SLEEP_TIME = 1  # Seconds
