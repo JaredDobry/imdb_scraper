@@ -70,7 +70,8 @@ def load_data(filepath: str) -> list:
         fr.close()
         out = []
         for line in lines:
-            out.append(str_to_movie(line))
+            if len(line.replace('\n', '')) > 0:  # Blank lines
+                out.append(str_to_movie(line))
         return out
     except IOError as e:
         logging.error(f"Error reading from file: {filepath} - {e}")
@@ -104,7 +105,8 @@ def load_blacklist(filepath: str) -> list[int]:
         fr.close()
         out = []
         for line in lines:
-            out.append(int(line.replace('\n', '')))
+            if len(line.replace('\n', '')) > 0:  # Blank lines
+                out.append(int(line.replace('\n', '')))
         return out
     except IOError as e:
         logging.error(f"Error reading from file: {filepath} - {e}")
