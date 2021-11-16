@@ -8,8 +8,8 @@ import time
 
 MAX_ID = 1160419  # Dune (2021)
 MIN_ID = 1
-FILE_PATH = "movie_data.txt"
-BLACKLIST_PATH = "blacklist.txt"
+FILE_PATH = "personal_scraped_data/movie_data.txt"
+BLACKLIST_PATH = "personal_scraped_data/blacklist.txt"
 SLEEP_TIME = 1  # Seconds
 
 parser = argparse.ArgumentParser()
@@ -219,10 +219,12 @@ def main() -> None:
                 blacklist_cache = []
                 logging.info("Finished writing blacklist cache")
     except KeyboardInterrupt:
-        os.system('cls' if os.name == 'nt' else 'clear')
+        if progress_bar_flag:
+            os.system('cls' if os.name == 'nt' else 'clear')
         logging.error("Keyboard Interrupt. Shutting down scraper.")
     except Exception as exc:
-        os.system('cls' if os.name == 'nt' else 'clear')
+        if progress_bar_flag:
+            os.system('cls' if os.name == 'nt' else 'clear')
         logging.error(f"Encountered exception while scraping IMDb: {exc}")
         raise exc
     finally:
