@@ -18,4 +18,11 @@ This installs the imdb_scraper package and all of it's dependencies.
 
 Run via poetry using:<br>
 ***poetry run scrape <n\>***<br>
-Where n is the number of new movies to scrape
+Where ***n*** is the number of new movies to scrape
+
+
+## Merging data files
+
+Run via poetry using:<br>
+***poetry run merge <from\> <to\> <is_blacklist\>***<br>
+Where ***from*** is loaded along with ***to***, and the difference of ***from - to*** is appended to ***to***. ***is_blacklist*** specifies whether the file is a blacklist file, you can specify using True, true, T, t, or 1. Any other input evaluates to False.

@@ -14,33 +14,49 @@ SLEEP_TIME = 1  # Seconds
 
 parser = argparse.ArgumentParser()
 parser.add_argument("n", help="The number of movies to scrape from IMDb", type=int)
-parser.add_argument("--progress_bar", type=bool, default=True, help="Flag to display progress bar")
+
 
 def movie_to_str(movie: Movie) -> str:
     keys = movie.keys()
     movie_str = str(movie.movieID)
-    movie_str += ';' + movie["title"]
-    movie_str += ';' + str(movie["year"]) if "year" in keys else ";None"
-    movie_str += ';' + str(movie["rating"]) if "rating" in keys else ";None"
-    movie_str += ';' + str(movie["votes"]) if "votes" in keys else ";None"
-    movie_str += ';' + movie["genres"][0] if ("genres" in keys and movie["genres"][0]) else ";None"
-    movie_str += ';' + movie["runtimes"][0] if ("runtimes" in keys and movie["runtimes"][0]) else ";None"
-    movie_str += ';' + movie["languages"][0] if ("languages" in keys and movie["languages"][0]) else ";None"
+    movie_str += ";" + movie["title"]
+    movie_str += ";" + str(movie["year"]) if "year" in keys else ";None"
+    movie_str += ";" + str(movie["rating"]) if "rating" in keys else ";None"
+    movie_str += ";" + str(movie["votes"]) if "votes" in keys else ";None"
+    movie_str += (
+        ";" + movie["genres"][0]
+        if ("genres" in keys and movie["genres"][0])
+        else ";None"
+    )
+    movie_str += (
+        ";" + movie["runtimes"][0]
+        if ("runtimes" in keys and movie["runtimes"][0])
+        else ";None"
+    )
+    movie_str += (
+        ";" + movie["languages"][0]
+        if ("languages" in keys and movie["languages"][0])
+        else ";None"
+    )
     return movie_str
 
 
 def str_to_movie(movie_str: str) -> list:
     out = []
-    movie_split = movie_str.replace('\n', '').split(';')
+    movie_split = movie_str.replace("\n", "").replace("\r", "").split(";")
     out.append(movie_split[0])
     out.append(movie_split[1])
-    out.append(int(movie_split[2]) if movie_split[2] != 'None' else None)
-    out.append(float(movie_split[3]) if movie_split[3] != 'None' else None)
-    out.append(int(movie_split[4]) if movie_split[4] != 'None' else None)
-    out.append(movie_split[5] if movie_split[5] != 'None' else None)
-    out.append(int(movie_split[6]) if movie_split[6] != 'None' else None)
-    out.append(movie_split[7] if movie_split[7] != 'None' else None)
+    out.append(int(movie_split[2]) if movie_split[2] != "None" else None)
+    out.append(float(movie_split[3]) if movie_split[3] != "None" else None)
+    out.append(int(movie_split[4]) if movie_split[4] != "None" else None)
+    out.append(movie_split[5] if movie_split[5] != "None" else None)
+    out.append(int(movie_split[6]) if movie_split[6] != "None" else None)
+    out.append(movie_split[7] if movie_split[7] != "None" else None)
     return out
+
+
+def movie_list_to_str(movie_list: list) -> str:
+    return f"{movie_list[0]};{movie_list[1]};{movie_list[2]};{movie_list[3]};{movie_list[4]};{movie_list[5]};{movie_list[6]};{movie_list[7]}"
 
 
 def save_data(filepath: str, movies: list[str], append: bool = False) -> None:
@@ -48,13 +64,13 @@ def save_data(filepath: str, movies: list[str], append: bool = False) -> None:
         return
     try:
         first = False if append else True
-        fw = open(filepath, 'a') if append else open(filepath, 'w')
+        fw = open(filepath, "a") if append else open(filepath, "w")
         for movie in movies:
             if first:
                 fw.write(movie)
                 first = False
             else:
-                fw.write('\n' + movie)
+                fw.write("\n" + movie)
         fw.close()
     except IOError as e:
         logging.error(f"Error writing to file: {filepath} - {e}")
@@ -65,12 +81,14 @@ def load_data(filepath: str) -> list:
         logging.info(f"File {filepath} doesn't exist, assuming first run...")
         return []
     try:
-        fr = open(filepath, 'r')
+        fr = open(filepath, "r")
         lines = fr.readlines()
         fr.close()
         out = []
         for line in lines:
-            if len(line.replace('\n', '')) > 0:  # Blank lines
+            if (
+                len(line.replace("\n", "").replace("\r", "").replace(" ", "")) > 0
+            ):  # Blank lines
                 out.append(str_to_movie(line))
         return out
     except IOError as e:
@@ -83,13 +101,13 @@ def save_blacklist(filepath: str, bl_ids: list[int], append: bool = False) -> No
         return
     try:
         first = False if append else True
-        fw = open(filepath, 'a') if append else open(filepath, 'w')
+        fw = open(filepath, "a") if append else open(filepath, "w")
         for bl_id in bl_ids:
             if first:
                 fw.write(str(bl_id))
                 first = False
             else:
-                fw.write('\n' + str(bl_id))
+                fw.write("\n" + str(bl_id))
         fw.close()
     except IOError as e:
         logging.error(f"Error writing to file: {filepath} - {e}")
@@ -100,13 +118,13 @@ def load_blacklist(filepath: str) -> list[int]:
         logging.info(f"File {filepath} doesn't exist, assuming first run...")
         return []
     try:
-        fr = open(filepath, 'r')
+        fr = open(filepath, "r")
         lines = fr.readlines()
         fr.close()
         out = []
         for line in lines:
-            if len(line.replace('\n', '')) > 0:  # Blank lines
-                out.append(int(line.replace('\n', '')))
+            if len(line.replace("\n", "")) > 0:  # Blank lines
+                out.append(int(line.replace("\n", "")))
         return out
     except IOError as e:
         logging.error(f"Error reading from file: {filepath} - {e}")
