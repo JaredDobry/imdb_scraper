@@ -14,7 +14,7 @@ SLEEP_TIME = 1  # Seconds
 
 parser = argparse.ArgumentParser()
 parser.add_argument("n", help="The number of movies to scrape from IMDb", type=int)
-
+parser.add_argument("--progress_bar", type=bool, default=True, help="Flag to display progress bar")
 
 def movie_to_str(movie: Movie) -> str:
     keys = movie.keys()
