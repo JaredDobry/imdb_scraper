@@ -1,7 +1,13 @@
 import argparse
 import logging
 import os
-from imdb_scraper.scraper import load_blacklist, load_data, movie_list_to_str, save_blacklist, save_data
+from imdb_scraper.scraper import (
+    load_blacklist,
+    load_data,
+    movie_list_to_str,
+    save_blacklist,
+    save_data,
+)
 
 parser = argparse.ArgumentParser()
 parser.add_argument("fr", help="The file to pull extra information from", type=str)
