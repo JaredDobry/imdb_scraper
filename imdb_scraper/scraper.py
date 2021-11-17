@@ -8,13 +8,13 @@ import time
 
 MAX_ID = 1160419  # Dune (2021)
 MIN_ID = 1
-FILE_PATH = "movie_data.txt"
-BLACKLIST_PATH = "blacklist.txt"
+FILE_PATH = "personal_scraped_data/movie_data.txt"
+BLACKLIST_PATH = "personal_scraped_data/blacklist.txt"
 SLEEP_TIME = 1  # Seconds
 
 parser = argparse.ArgumentParser()
 parser.add_argument("n", help="The number of movies to scrape from IMDb", type=int)
-
+parser.add_argument("--progress_bar", type=bool, default=True, help="Flag to display progress bar")
 
 def movie_to_str(movie: Movie) -> str:
     keys = movie.keys()
@@ -152,6 +152,7 @@ def main() -> None:
     # Init
     args = parser.parse_args()
     n = args.n
+    progress_bar_flag = args.progress_bar
     random.seed(None)
     ia = IMDb(loggingLevel=logging.ERROR)
     count = 0
@@ -169,6 +170,12 @@ def main() -> None:
                 blacklist.append(movie_id)
                 blacklist_cache.append(movie_id)
                 continue
+
+            if progress_bar_flag:
+                os.system('cls' if os.name == 'nt' else 'clear')
+                dec_complete = count/n
+                progress = int(round(50 * dec_complete))
+                logging.info("[" + progress * "|" + (50-progress) * " " + "]" + f" {dec_complete*100}%")
 
             # Do some filtering
             keys = movie.keys()
@@ -213,10 +220,20 @@ def main() -> None:
                 blacklist_first_write = False
                 blacklist_cache = []
                 logging.info("Finished writing blacklist cache")
+    except KeyboardInterrupt:
+        if progress_bar_flag:
+            os.system('cls' if os.name == 'nt' else 'clear')
+        logging.error("Keyboard Interrupt. Shutting down scraper.")
     except Exception as exc:
+        if progress_bar_flag:
+            os.system('cls' if os.name == 'nt' else 'clear')
         logging.error(f"Encountered exception while scraping IMDb: {exc}")
         raise exc
     finally:
+        if progress_bar_flag:
+            dec_complete = count/n
+            progress = int(round(50 * dec_complete))
+            logging.info("[" + progress * "|" + (50-progress) * " " + "]" + f" {dec_complete*100}%")
         logging.info("Doing final writes")
         save_data(FILE_PATH, write_cache, not first_write)  # Save data
         save_blacklist(BLACKLIST_PATH, blacklist_cache, not blacklist_first_write)
