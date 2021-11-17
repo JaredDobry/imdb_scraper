@@ -7603,3 +7603,914 @@
 0204559;Spring Wind;1974;5.2;11;None;92;Slovenian
 0233199;America Is Hard to See;1970;6.9;34;Documentary;90;English
 0084634;An Ideal Adventure;1982;5.2;241;Comedy;96;Italian
+0398801;The Boy Who Plays on the Buddhas of Bamiyan;2004;7.5;153;Documentary;96;English
+0223359;The Gifted Ones;1959;4.0;6;Short;30;English
+0419394;The 11th Annual People's Choice Awards;1985;5.4;26;None;None;English
+0057445;The Raiders of Leyte Gulf;1962;4.2;71;Drama;80;English
+0168237;Van Movie to Berlin;1996;8.3;7;None;None;English
+1016044;Yehi Hai Zindagi;2005;5.6;24;Action;None;Hindi
+0091160;Guo fu zhuan;1986;6.0;10;Drama;156;Mandarin
+0077475;Dráma a vadászaton;1986;6.7;14;None;95;Hungarian
+1001343;Don't F*** with Me, I Have 51 Brothers and Sisters;2005;5.6;12;Documentary;84;English
+0279905;Ayse, My Daughter;1974;5.2;46;Drama;None;Turkish
+0112581;Broken Bars;1995;5.2;53;Action;97;English
+0051852;The Law;1959;6.8;808;Comedy;126;Italian
+0169334;Treasure at the Mill;1957;7.2;55;Family;60;English
+0088075;Secret Places;1984;6.9;101;Drama;98;English
+0961757;Paraiso: Tatlong kwento ng pag-asa;2007;7.8;12;Drama;None;Filipino
+0087657;Le Léopard;1984;4.3;88;Action;86;French
+0057449;The Raven;1963;6.6;11412;Comedy;86;English
+0239127;Living Seas;1986;8.8;18;None;60;English
+0365663;Punla;2003;7.8;11;Drama;95;Filipino
+0187309;Un modo di essere donna;1973;5.4;15;Drama;95;Italian
+0077593;Seagulls Fly Low;1978;6.2;60;Adventure;97;Italian
+0151456;Magoo's Glorious Fourth;1957;6.0;30;Family;6;English
+0277950;Pendekar bujang lapok;1959;7.4;185;Comedy;104;Malay
+0102818;Run;1991;6.2;2774;Action;91;English
+0373457;William Psychspeare's the Taming of the Shrink;1998;6.6;8;Comedy;10;English
+0060560;The Pornographers;1966;7.3;2261;Comedy;128;Japanese
+0203737;Rainbow Bridge;1993;6.3;10;Drama;115;Japanese
+0435762;Two Minutes;1998;8.6;10;Short;18;English
+0246136;Outloud;1999;7.0;7;None;95;English
+0367580;Camp Pacific;2002;8.0;30;Drama;29;English
+0404251;Muhammad Ali: Through the Eyes of the World;2001;7.6;456;Documentary;115;English
+0193690;12 Stops on the Road to Nowhere;1999;6.9;84;Comedy;18;English
+0317445;Eukaliptus;2002;5.8;17;Western;72;Polish
+0105599;Tirangaa;1992;6.9;1954;Action;168;Hindi
+0483128;Psalm 51;2002;5.2;7;Short;3;None
+0273047;28th NAACP Image Awards;1997;6.6;17;None;120;English
+0887779;The Shape of Water;2006;7.4;37;Documentary;70;English
+0470869;Neal 'n' Nikki;2005;3.2;1531;Comedy;122;English
+0890887;Toi;2007;4.5;171;Drama;87;French
+0398247;Out-of-Body Experience;2004;9.0;31;Comedy;15;English
+0316012;Ilanjodigal;1982;5.0;7;Musical;None;Tamil
+0262511;Tales of a Honeycomb;1981;5.8;8;Comedy;82;Greek
+0142494;The Hunt for Adolf Eichmann;1994;6.6;30;Documentary;91;Hebrew
+0135567;Nelyubov;1991;5.5;23;Drama;94;Russian
+0102638;Paris Trout;1991;6.4;1542;Drama;100;English
+0227237;Pazzo d'amore;1999;4.9;14;Comedy;121;Neapolitan
+0244956;Albània Blues;2000;7.7;9;None;90;None
+0328179;Neil's Party;2006;4.9;364;Comedy;89;None
+0499475;Film Noir;2005;7.1;104;Animation;3;None
+0066553;Weekend with the Babysitter;1970;4.1;716;Drama;93;English
+0156093;Solva Sawan;1979;6.2;28;Drama;140;Hindi
+0114798;Unstrung Heroes;1995;6.7;3116;Comedy;93;English
+1033556;A ciegas...;2007;4.5;32;Short;13;Spanish
+0288694;O paihnidiaris;1970;3.4;9;Comedy;89;Greek
+0110328;Bloody Beast;1994;5.7;40;Crime;89;Cantonese
+0333497;Getting Along with Parents;1954;4.0;7;None;None;English
+0066519;The Horrible Sexy Vampire;1971;4.2;178;Horror;90;Spanish
+0760182;Relative Obscurity;2007;7.5;73;Drama;None;English
+0426038;Los inquilinos del infierno;2004;5.2;109;Thriller;92;Spanish
+0089659;Die Nacht;1985;8.4;41;None;367;German
+0096148;Souvenir;1988;7.1;84;Drama;93;English
+0150378;Double-Cross-Country Race;1951;6.7;52;Family;7;English
+0429524;Aci su;1988;6.5;11;Drama;None;Turkish
+0323926;Serenity;1999;8.4;72;Short;8;English
+0452224;First Lesson;1989;7.4;10;Comedy;None;Filipino
+0059002;Hu die bei;1965;6.3;28;Drama;88;Mandarin
+0113394;The Immortals;1995;5.6;1420;Action;98;English
+0312335;Akpamyk;1996;5.1;11;Family;90;Turkmen
+0176415;The Grandfather;1998;7.4;1851;Drama;151;Spanish
+0112546;Mouth to Mouth;1995;6.4;1680;Comedy;106;Spanish
+0915457;Falco - Verdammt, wir leben noch!;2008;6.8;1407;Biography;109;German
+0437359;Niño vudú;2004;6.2;62;Drama;22;Spanish
+1152262;Ground Hero;2003;4.8;7;Short;7;English
+0137215;Sometimes My Feet Go Numb;1996;7.7;13;Drama;None;English
+0063410;Paper Lion;1968;6.3;1026;Comedy;107;English
+0427610;On Account of Amber;2004;8.5;16;Drama;None;English
+0205245;Majestät brauchen Sonne;2000;6.9;112;Documentary;105;German
+0379969;Sabadazo (Sábado, D.F.);1988;6.8;23;Drama;91;Spanish
+0114772;The Breath;1995;6.5;10;Drama;138;Japanese
+0772247;No Backing Out;2004;8.4;13;Short;None;English
+0157182;Went to Coney Island on a Mission from God... Be Back by Five;1998;5.9;349;Drama;94;English
+0892112;A Walk to Beautiful;2007;8.2;185;Documentary;85;Amharic
+0062011;Musikanter;1967;4.7;73;Family;80;Norwegian
+0044595;Erkel;1952;6.4;28;Biography;126;Hungarian
+0369887;A Killer's Expiry Date;1998;6.6;6;Action;95;Cantonese
+0086142;Pristupit k likvidatsii;1984;6.6;69;Action;132;Russian
+0069044;One is a Lonely Number;1972;6.1;355;Drama;97;English
+0236278;Hakuchu no buraikan;1961;7.1;47;Crime;82;English
+0054297;The 7th Commandment;1961;6.2;57;Adventure;82;English
+0283901;Audit;2001;5.7;102;Short;28;English
+0084545;Pronto... Lucia;1982;3.7;9;Drama;None;Italian
+0369284;Blank;2003;6.3;65;Drama;32;Danish
+0048334;El malvado Carabel;1956;6.5;118;Comedy;81;Spanish
+0182692;Alibi on the Lake;1966;6.6;51;Crime;95;Czech
+0399361;Missy;2001;7.2;40;Drama;71;English
+0370338;Bert;2002;7.6;74;Animation;5;English
+0765429;American Gangster;2007;7.8;409229;Biography;157;English
+0313964;Devathai;1997;6.4;21;None;None;Tamil
+0077879;Lude godine;1977;7.4;1425;Comedy;83;Serbo-Croatian
+0821475;Detective Mr. Gong;2006;4.8;48;Comedy;106;Korean
+0101926;Fugitive Love;1992;7.4;25;Comedy;15;None
+0049508;Nero's Mistress;1956;5.7;417;Comedy;88;Italian
+0413323;Subway Cafe;2004;8.2;18;Drama;71;English
+0091087;Den frusna leoparden;1986;5.3;69;Drama;97;None
+0125522;Sue;1997;7.1;1392;Drama;91;English
+0403476;Samaritan;2004;4.4;22;Short;2;Norwegian
+0435189;María querida;2004;6.1;68;Drama;91;Spanish
+0166174;Drum în penumbra;1972;6.7;73;Drama;99;Romanian
+0092225;Wisdom;1986;5.7;3302;Crime;109;English
+0240188;Vozvrashchenie Batterflyay;1983;6.6;15;Drama;93;Russian
+0067506;La novicia rebelde;1972;6.8;51;Musical;92;Spanish
+0319235;El cuatrero;1989;5.7;24;Action;85;Spanish
+0235684;Poottata Pootukkal;1979;6.6;5;None;None;Tamil
+0084479;The Passerby;1982;6.7;989;Drama;110;French
+0870157;Kopf oder Zahl;2009;2.7;296;Drama;94;German
+0232149;The Mystery of Paul;2000;6.9;21;Documentary;104;French
+0051832;Nobody's Child;1960;6.0;9;Drama;108;Mandarin
+0077800;Killer Fish;1979;4.1;1962;Horror;101;English
+0131506;O sláve a tráve;1985;6.9;11;Drama;65;Slovak
+0105387;Tou shen gu zu;1992;5.6;42;Action;96;Cantonese
+0330751;Parting Gifts;2002;4.0;6;Short;17;English
+0899179;Waiting to Inhale;2005;7.8;48;Documentary;73;English
+0212772;The Annihilation of Fish;1999;6.3;204;Romance;108;English
+0069925;Crazy - total verrückt;1973;3.7;52;Comedy;95;German
+0065567;Con la música a otra parte;1974;4.0;10;Comedy;91;Spanish
+0762070;Andrew Jenks, Room 335;2006;7.9;219;Documentary;90;English
+0351157;Fish;2002;6.9;21;Short;12;None
+1018728;Heart Like a Hand Grenade;2015;7.4;437;Documentary;96;English
+0105378;Shadows and Fog;1991;6.7;16896;Comedy;85;English
+0920796;Spell My Name;2006;5.6;9;Short;24;Shona
+0073338;Night of the Howling Beast;1975;5.3;666;Adventure;94;Spanish
+0085548;Flamenco at 5:15;1983;7.0;178;Documentary;29;English
+0773747;The Tear of the Cold;2004;7.1;375;Drama;96;Persian
+0418267;The Ultimate Truth;2004;7.2;23;Comedy;81;English
+0120126;Sick;1997;7.5;1645;Documentary;90;English
+0128286;A Journey to Jerusalem;1968;7.7;16;Documentary;84;English
+0294514;Deathrow;2000;5.5;48;Crime;118;Filipino
+0383493;Maricris Sioson: Japayuki;1993;6.4;14;Crime;102;Filipino
+0469021;Alan Partridge;2013;6.9;30910;Action;90;English
+0260991;Joint Security Area;2000;7.8;28614;Action;110;Korean
+0083264;Ferat Vampire;1982;5.8;534;Crime;90;Czech
+0105698;Universal Soldier;1992;6.0;86467;Action;102;English
+0094142;Throw Momma from the Train;1987;6.3;35652;Comedy;88;English
+1063331;I Am Bob;2007;7.4;138;Short;19;English
+0141641;The Maiden;1955;5.5;27;Crime;100;French
+0233962;Jaga Mechida Maga;1972;8.6;22;Drama;153;Kannada
+0416337;Çilgin gençlik;1966;4.8;11;Drama;None;Turkish
+0144113;Bodo shimane keimusho;1975;6.1;29;Action;95;Japanese
+0261409;The Sensuous Housewife;1973;4.4;58;Comedy;84;German
+0320290;Pondaatti Thevai;1990;4.8;21;None;148;Tamil
+0241018;The Unforgettable Richard Beckinsale;2000;6.5;36;Short;40;English
+0113329;Horror w Wesolych Bagniskach;1996;5.7;35;Comedy;82;Polish
+0094831;I cammelli;1988;6.8;99;Comedy;100;Italian
+0195755;Gospodi, prosti nas, greshnykh;1992;5.6;14;Drama;81;Russian
+0389946;Dr. Kleinensteinen;2003;7.8;11;Fantasy;29;English
+0051731;El hombre y el monstruo;1959;6.2;271;Horror;78;Spanish
+0383534;Noel;2004;6.2;9588;Drama;96;English
+0358146;Show;2003;6.0;692;Action;120;Polish
+0925072;La double insomnie;1963;5.7;7;Short;10;French
+0486599;If Love Be Blind;2005;7.7;7;Short;17;English
+0090567;52 Pick-Up;1986;6.4;5755;Crime;110;English
+0325444;Gaijin - Ama-me Como Sou;2005;6.3;83;Drama;131;Portuguese
+0151875;Ozark Lark;1960;5.7;38;Family;6;English
+0349575;Hood Angels;2003;2.8;131;Action;86;English
+0302261;American Veteran Awards;2002;7.8;11;Family;None;English
+1137434;Aabra Ka Daabra;2004;2.4;280;Fantasy;144;Hindi
+0240864;Revisited;1998;7.5;14;Drama;23;English
+0846116;Summer or The Flaws of Andrés;2006;6.3;35;Short;22;Spanish
+0176318;The Week That Girl Died;1998;7.8;58;Drama;90;English
+0047317;The Other Woman;1954;6.5;215;Crime;81;English
+0860458;Rupert's Magic Christmas;2006;7.1;12;Comedy;85;Italian
+0058736;War and Pieces;1964;7.0;261;Animation;6;English
+0272324;Passion and Romance: Strange Desire;1997;3.7;39;Thriller;80;English
+0217536;The Haunting of Hell House;1999;4.3;553;Horror;90;English
+0207121;Spotlight No. 2;1951;5.4;8;Short;11;English
+0054692;Blue Hawaii;1961;6.1;6020;Comedy;102;English
+0068964;The Great Treasure Hunt;1972;5.4;60;Action;95;Italian
+0145921;Mysteries of Egypt;1998;6.5;515;Documentary;38;English
+0222935;Secuestro en Acapulco;1983;5.6;19;Adventure;84;Spanish
+0261710;Goldframe;1970;6.0;130;Animation;4;English
+0063996;Akran;1969;7.2;71;Drama;110;English
+1054063;From Ashes to Ashes;2000;7.8;100;Short;36;Mandarin
+0384015;Crushes;2003;8.1;13;Comedy;12;English
+0225010;À la vitesse d'un cheval au galop;1992;4.4;24;Comedy;85;French
+0168450;Begging for Love;1998;7.3;112;Drama;135;Japanese
+0356116;Thakshasila;1995;4.9;38;Action;None;Malayalam
+0065009;Some Girls Do;1969;5.6;579;Action;88;English
+0064275;Four Came to Kill Sartana;1969;4.6;78;Western;97;Italian
+0392020;Fuel;2003;6.5;119;Horror;17;English
+0251854;Mondo oscenità;1966;6.3;23;Documentary;69;English
+0449523;Lying Beside You;2001;8.0;18;Comedy;105;English
+0118788;Lucky Star;1997;7.1;2416;Drama;110;Spanish
+0447559;Yeh Dil Kisko Doon;1963;5.4;22;Drama;116;Hindi
+0335136;Hakanlarin savasi;1968;5.7;12;Action;None;Turkish
+0049676;Riihalan valtias;1956;6.5;52;Drama;79;Finnish
+0300902;Absolon;2003;4.2;3131;Sci-Fi;96;English
+0224757;A Choice of Two;1981;4.4;15;None;58;English
+0083691;Breakfast in Paris;1982;6.4;42;Comedy;94;English
+0128226;Soccer Player;1990;5.9;29;Crime;90;Russian
+0243970;Hollywood (and Vine);1993;7.8;14;Drama;18;English
+0439182;Four Eyed Monsters;2005;6.3;1216;Comedy;85;English
+0133201;Deadlock;1967;7.2;39;Drama;81;Hungarian
+0468644;Love Is All;2007;7.0;7695;Comedy;110;Dutch
+0154215;Benkiyalli Aralida Hoovu;1983;7.7;39;Drama;142;Kannada
+0188779;Krvopijci;1989;6.2;110;Comedy;86;Serbo-Croatian
+0972782;Notorious B.I.G. Bigger Than Life;2007;6.8;310;Documentary;101;English
+0145008;Queen of the Lake;1998;5.5;165;Family;89;None
+0052387;When Hell Broke Loose;1958;5.7;292;Drama;78;German
+0042278;The Boy from Indiana;1950;5.9;39;Drama;66;English
+0074968;No Deposit, No Return;1976;6.5;1490;Comedy;112;English
+0156429;Le costaud des Batignolles;1952;5.3;30;Comedy;83;French
+0426442;The Drive Is Getting Scared;2004;7.5;13;Short;27;English
+0201596;7 Days of Lying;1963;5.3;45;Comedy;78;Greek
+0323204;Masajista de señoras;1973;5.5;10;Comedy;90;Spanish
+0424232;Lauryn Hill Live;1999;8.0;7;Music;60;English
+0445387;Wilsinho Galiléia;1978;7.2;17;Drama;60;Portuguese
+0143119;Atalia;1984;7.4;20;Drama;90;Hebrew
+0855849;Julieta;2009;7.2;17;Short;10;Spanish
+0136976;From Blossom Time to Autumn Frost;1953;8.3;117;Documentary;82;Hungarian
+0234778;The Source of Suction;1994;6.5;14;Drama;96;English
+0092662;The Bit Part;1988;5.7;207;Comedy;87;English
+0112644;Castle Ghosts of England;1995;7.7;43;None;None;English
+0265344;The Month of August;2002;6.1;65;Comedy;92;English
+0090168;Thunder Alley;1985;6.5;386;Drama;111;English
+0051834;Giants and Toys;1958;7.3;931;Comedy;95;Japanese
+0225011;Oh! Woman: A Dirty Song;1981;6.0;47;None;83;Japanese
+0299756;Diana Ross in Concert!;1979;9.1;75;Music;76;English
+0057490;The Servant;1963;7.9;11372;Drama;116;English
+0301619;Mis;2001;6.4;29;Short;11;Dutch
+0239507;Girls Can't Swim;2000;5.9;609;Comedy;102;French
+0157092;Tabula rasa;1989;6.7;43;Short;18;None
+0972568;Passio;2006;6.3;27;None;74;None
+0420690;Inchu e aghmkum gete;1959;6.6;48;Drama;101;Armenian
+0046012;The Lost Planet;1953;5.1;72;Sci-Fi;246;English
+0485598;The Bounty;1995;5.8;24;Documentary;14;English
+0178863;Restos;1975;7.5;11;Documentary;10;Portuguese
+0096458;Wohin?;1988;7.5;16;Drama;96;German
+0108674;Under the Stars;1993;6.5;36;Drama;95;French
+0282109;Qué hombre tan sin embargo;1967;6.2;14;Comedy;95;Spanish
+0915747;A Poor Kid's Guide to Success;2007;8.3;40;Biography;77;English
+0099128;Betsy's Wedding;1990;5.6;3691;Comedy;94;English
+0110943;Rampo;1994;6.7;576;Drama;100;Japanese
+0087066;What's Up Doc?;1985;7.1;139;Comedy;79;Czech
+0093225;Housekeeping;1987;7.2;2473;Comedy;116;English
+0295872;Bad Company;1992;7.9;21;Crime;None;English
+0061555;De trei ori Bucuresti;1967;7.3;41;Drama;96;Romanian
+0042639;Kike wadatsumi no koe: Nippon senbotsu gakusei shuki;1950;6.6;25;War;109;Japanese
+0249500;Estafa de amor;1955;6.7;10;Drama;93;Spanish
+0310795;The Brass Ring;1974;3.6;5;Action;110;English
+0478700;Kozete;1977;6.2;13;Animation;10;Latvian
+0974605;The Next Move;2006;5.9;29;Animation;12;None
+0183613;Orfeu;1999;5.6;905;Crime;110;Portuguese
+0151380;Lonesome Ranger;1966;5.0;26;Family;6;English
+0472096;Forfeit;2007;5.0;275;Drama;84;English
+0250714;School Master;1958;7.5;22;None;185;Kannada
+0827507;Inheritance;2006;7.5;498;Documentary;75;English
+0051165;Victor and Victoria;1957;6.2;25;Comedy;107;German
+0433581;Kongekabale - Sandheden om filmen;2004;6.1;12;Documentary;25;Danish
+0061057;The Sons of Great Bear;1966;6.0;373;Western;92;German
+0408839;The Heartbreak Kid;2007;5.8;89470;Comedy;116;English
+0855705;Young American Dream;2013;6.9;22;Drama;107;None
+0484438;Lookin' for Some Posse;2005;7.6;14;Short;10;English
+0433446;Saturday Night Live: The Best of Christopher Walken;2004;7.7;1202;Comedy;83;English
+0199841;The Ninja Pirates;1978;6.1;33;Action;86;Mandarin
+0418332;Worte und Spiele;1998;7.4;18;Documentary;68;German
+0295289;A Guy Thing;2003;5.6;17149;Comedy;101;English
+0371425;Ödenwaldstetten;1964;7.1;35;Short;36;German
+0052766;Valentine's Day;1959;5.3;121;Comedy;95;Spanish
+0963758;Hello?;2006;8.0;7;Short;15;Mandarin
+0218107;Circuit;2001;5.7;1126;Drama;130;English
+0378263;The Living Silence;2003;5.4;13;Short;15;English
+0108341;Time Indefinite;1993;7.6;379;Biography;114;English
+0102411;The Marrying Man;1991;5.8;5531;Comedy;115;English
+0174924;Miss millionersha;1988;6.1;33;Comedy;96;Russian
+0425731;Academy of Country Music Pre-Show;2004;6.1;21;Music;44;English
+0170000;Eagles Law;1988;7.4;10;Action;None;English
+0110251;Nobody Loves Me;1994;7.2;1176;Comedy;104;German
+0191766;Wait and See;1998;6.5;99;Drama;100;Japanese
+0320541;Sumný Hradec Králové;2000;6.9;9;Short;23;Czech
+0402043;Bab el web;2005;4.5;117;Comedy;99;Arabic
+0123792;Demonstrator;1971;6.0;11;Drama;112;English
+0976060;Tokyo!;2008;7.1;10605;Comedy;112;Japanese
+0282372;Bare Fist: The Sport That Wouldn't Die;1997;4.2;21;None;None;English
+0388034;End of Summer;2003;8.2;9;Short;None;English
+0808490;Susannah;2006;8.0;13;Short;15;English
+0080763;Front Line;1979;8.6;36;Documentary;56;English
+0139576;Rule of Three;1996;6.2;38;Drama;None;English
+0281987;Los malvados;1966;6.6;16;Action;90;Spanish
+0204254;The Little Dolphins;1993;7.3;112;Comedy;98;Greek
+0219129;Liability Crisis;1995;3.9;14;Comedy;75;English
+1039893;Djanta;2007;6.6;6;Drama;106;None
+0303998;Fatma;2001;7.2;64;Drama;124;Arabic
+0119200;Girls Night Out;1997;6.6;50;Short;32;English
+0135608;Police State;1987;5.9;145;Drama;18;English
+0178184;Aan Milo Sajna;1970;6.4;228;Drama;177;Hindi
+0405832;Chris Rock: Never Scared;2004;8.0;5255;Documentary;80;English
+0103007;The Super;1991;5.7;5613;Comedy;84;English
+0150233;The Crystal Brawl;1957;6.0;130;Animation;8;English
+0342868;Pandora;2002;6.6;36;Animation;4;English
+0412580;Child Psychology;2004;6.8;10;Comedy;14;English
+0048741;The Toughest Man Alive;1955;6.1;36;Action;72;English
+0156409;Classe mista 3A;1996;2.6;120;Comedy;90;Italian
+0056838;The Murderer Knows the Score;1963;6.6;92;Comedy;80;French
+0774101;Life-to-Go;2008;8.7;13;Short;None;English
+0876226;Cristóbal Molón;2006;6.3;28;Animation;70;Spanish
+0121050;Acting Our Age;1992;5.3;10;Short;11;None
+1129403;Alor Thikana;1974;8.2;15;Family;None;Bangla
+0071666;Invasion from Inner Earth;1974;2.6;640;Drama;94;English
+0435505;Vanilla;2004;4.6;140;Drama;47;English
+0069266;The Wolves;1971;7.2;522;Crime;131;Japanese
+0122370;Abschied in Berlin;1985;5.1;10;Drama;65;German
+0279037;Heart of America;2002;4.4;2620;Drama;87;English
+0178808;Padre Pio da Pietrelcina;1997;8.1;37;Biography;100;Italian
+0178002;Roma-Paris-Barcelona;1989;4.8;6;Drama;85;Italian
+0070869;It Happened at Nightmare Inn;1973;5.7;841;Horror;83;Spanish
+0232598;School Master;1964;6.6;8;None;None;Malayalam
+0388794;Bristlelip;1982;6.6;12;Family;20;English
+0295171;Anita, the Insect Hunter;2001;7.3;28;Drama;93;Spanish
+0173872;Future Tense;1990;6.3;42;Short;31;English
+0102225;Klinik des Grauens;1992;7.1;17;Short;15;German
+0069004;Night of the Cobra Woman;1972;4.2;402;Horror;85;English
+0156529;Fatal Exam;1990;3.6;176;Horror;114;English
+0108358;Tombstone;1993;7.8;137496;Action;130;English
+0408318;Dark Horse;2005;7.2;3315;Comedy;109;Danish
+0081175;The National Mummy;1981;3.9;50;Comedy;85;Spanish
+0254077;Alien Visitor;1997;5.8;632;Drama;92;English
+0054508;Åsa-Nisse som polis;1960;4.4;101;Comedy;85;Swedish
+0762093;The Doorman;2007;5.8;70;Comedy;80;English
+0260945;Hasyarathna Ramakrishna;1982;6.4;12;None;138;Kannada
+0221100;Curious George;1991;7.8;15;Short;None;None
+0421062;Goodbye;2004;6.3;13;Drama;13;English
+0280403;Adios, amor...;1973;6.2;20;Drama;95;Spanish
+0235662;Pavam Ia Ivachan;1994;4.3;30;Comedy;149;Malayalam
+0088971;Crónica de familia;1986;6.5;23;Crime;103;Spanish
+0091123;GoBots: Battle of the Rock Lords;1986;5.8;495;Animation;75;English
+0819789;My Crazy Life;2006;6.3;8;Animation;6;English
+0867606;Operation Lysistrata;2006;7.7;24;Documentary;85;English
+0053615;Los autómatas de la muerte;1962;3.8;183;Action;80;Spanish
+0102181;Kafka;1991;6.9;9880;Drama;98;English
+0322196;Etfarag ya salam;2001;5.5;68;Comedy;None;Arabic
+0440803;Shutter;2004;7.1;43441;Horror;97;Thai
+0061194;Wild Wild Winter;1966;5.8;53;Comedy;80;English
+0048741;The Toughest Man Alive;1955;6.1;36;Action;72;English
+0108654;Casino Raiders II;1991;5.9;323;Action;91;Cantonese
+0089908;Return to Oz;1985;6.7;26227;Adventure;113;English
+0250558;The Madam;1969;5.5;40;Drama;58;English
+0298579;Trimurti;1974;6.3;24;Crime;None;Hindi
+0055335;Przeciwko bogom;1961;6.4;5;Drama;81;Polish
+0382060;Greshnyy angel;1963;5.5;15;Drama;95;Russian
+1152397;American Violet;2008;7.0;2558;Drama;103;English
+0388473;Tokyo Godfathers;2003;7.8;34844;Animation;90;Japanese
+0056823;The Dark Room of Damocles;1963;7.0;672;Drama;119;Dutch
+0088156;Souvenirs souvenirs;1984;5.8;95;Comedy;124;French
+0493109;Battle Chess;2005;7.1;29;Short;6;English
+0234066;Kuzhandaiyum Deivamum;1965;7.5;26;None;None;Tamil
+0216587;Bellyful;2000;3.3;86;Comedy;105;French
+0059085;Dateline Diamonds;1965;5.3;129;Adventure;73;English
+0085892;The Man Who Wasn't There;1983;3.8;572;Action;111;English
+0460760;Cutting Room;2006;5.2;282;Comedy;83;English
+0327155;Snipers Alley;2002;6.0;28;Drama;14;German
+0280969;My Little Eye;2002;5.5;11980;Horror;95;English
+0217855;Toya;1956;5.5;21;Family;71;Norwegian
+0166238;Bloodguilt;1997;6.0;7;Thriller;93;English
+0057435;The Punch and Judy Man;1963;6.3;411;Comedy;96;English
+0473064;Doomsday: The Sinking of Japan;2006;5.6;1440;Adventure;135;Japanese
+0072666;Zaat;1971;2.5;5044;Horror;100;English
+0238247;God's Army;2000;6.4;1089;Drama;108;English
+0047575;They Rode West;1954;5.9;552;Western;84;English
+0867332;Janmam;2007;4.9;12;Action;None;Malayalam
+0982863;City of Baseball;2007;9.4;8;Documentary;55;English
+0406222;Skrítek;2005;7.0;602;Comedy;90;None
+0298294;Davey and Son of Goliath;1996;6.6;17;Short;None;English
+0078337;Suave, cariño, muy suave;1978;4.9;13;None;95;Spanish
+1068847;Roseanne and Tom: Getting Away with It;1992;5.1;14;Comedy;None;English
+0184537;The Goddess of Mercy;1967;7.0;31;Adventure;97;Mandarin
+0317832;A Chivalrous Man Named Kim Du-han;1981;7.8;13;Drama;90;Korean
+0241313;O Clube das Infiéis;1974;4.8;24;Comedy;95;Portuguese
+0073320;Lunatics and Lovers;1976;5.9;122;Comedy;110;Italian
+0151005;The Fairy with the Seven Heads;1999;8.2;14;Animation;11;Hungarian
+0102028;Herr Ober!;1992;6.3;308;Comedy;93;German
+0397077;L.A. Dicks;2005;5.0;94;Comedy;None;English
+0114071;Over the Wire;1996;4.5;193;Drama;88;English
+0048787;La vida es maravillosa;1956;4.7;14;Comedy;88;Spanish
+0222886;Canada Vignettes: Don Messer - His Land and His Music - Don Messer 1910-1973;1979;5.8;9;Short;1;English
+0075886;Cracking Up;1977;3.6;184;Comedy;69;English
+0219370;Un balcon en forêt;1978;6.7;24;Drama;162;French
+0115463;The Ad and the Ego;1997;7.7;44;Documentary;57;English
+0109403;Chasers;1994;5.1;6482;Action;102;English
+0101683;Deadly Deception: General Electric, Nuclear Weapons and Our Environment;1991;6.8;73;Documentary;27;English
+0107250;James Ellroy: Demon Dog of American Crime Fiction;1993;6.9;48;Documentary;91;English
+0056184;Line;1961;6.0;87;Drama;90;Norwegian
+0090171;Tea in the Harem;1985;6.9;417;Drama;110;French
+0438053;Scumbags;2006;4.6;12;Action;95;Spanish
+0264180;Without You;1999;8.1;17;Short;3;None
+0166211;Gregorio;1984;6.7;130;Drama;87;Spanish
+0214604;Crazy Connected Thing;1999;5.5;7;None;None;English
+0181966;Kiliç Aslan;1975;5.9;805;Action;109;Turkish
+0353334;Dasem e çuditëshme;1986;5.3;8;Comedy;None;Albanian
+0784972;The Brothers Solomon;2007;5.3;10845;Comedy;93;English
+0159669;Les premiers outrages;1955;5.3;13;Comedy;95;French
+0046173;Pekka Puupää kesälaitumilla;1953;5.9;262;Comedy;90;Finnish
+0358395;Blow Job;2002;7.1;25;Comedy;10;English
+0402335;The Last Fuck;2003;6.7;22;Horror;70;English
+0157944;Love in Tokyo;1966;6.8;171;Romance;164;Hindi
+0328449;Sogum;1985;8.2;11;Drama;None;None
+0479028;Falling Hard;2001;6.1;14;Drama;96;English
+0180091;La reina del mambo;1951;7.0;8;Crime;99;Spanish
+0103070;Thank You and Good Night;1991;7.8;83;Documentary;83;English
+0246959;Sukrutham;1994;7.3;198;Drama;148;Malayalam
+0446765;Punk: Attitude;2005;7.5;1597;Documentary;90;English
+0853223;Yasin;2006;8.6;38;Short;13;English
+0064226;A Bullet for Sandoval;1969;5.7;458;Western;105;Spanish
+0081780;By Hook or By Crook;1980;5.9;84;Action;94;Cantonese
+0264953;El tesoro del rey Salomón;1963;5.4;43;Comedy;90;Spanish
+0954943;Hinterland;2007;6.9;21;Short;28;French
+0448267;Zozo;2005;6.6;3174;Drama;105;Arabic
+0122648;Hardboiled Egg;1997;7.2;3199;Comedy;100;Italian
+0473567;...Yahaan;2005;7.4;1132;Drama;142;Hindi
+0147941;Molly & Gina;1994;4.5;93;Drama;93;English
+0060233;Akamoru: The Dark, Wild Yearning;1966;6.2;16;Drama;81;Japanese
+0125664;Man on the Moon;1999;7.4;128003;Biography;118;English
+0204298;Embalos Alucinantes;1978;4.2;38;Comedy;98;Portuguese
+0416111;Transit;2006;6.3;426;Comedy;140;English
+0085123;1919, crónica del alba;1983;6.7;82;Drama;90;Spanish
+0044614;The Fighter;1952;5.9;140;Drama;78;English
+0109584;The Decline of the Century: Testament L.Z.;1994;8.1;90;Documentary;201;None
+0121105;The Beloved Son of God;1988;7.0;82;Drama;94;Cantonese
+0045725;El Alaméin;1953;5.7;75;Drama;66;English
+0174921;Minden kezdet nehéz;1966;7.4;14;Comedy;None;Hungarian
+0118779;Brittle Glory;1996;5.2;160;Comedy;84;English
+0043666;I Was an American Spy;1951;6.6;268;Biography;85;English
+0078104;Posledniy shans;1979;6.8;15;Drama;83;Russian
+0057912;Canon;1964;7.0;381;Animation;10;English
+0188163;Pueblo chico;1974;5.8;5;Drama;85;Spanish
+0063830;Seishun;1968;7.3;15;Documentary;96;Japanese
+0316342;Something Happened;1993;7.6;670;Short;24;Swedish
+0426468;Gargaroth;2004;6.0;11;Comedy;45;English
+0787524;The Man Who Knew Infinity;2015;7.2;54680;Biography;108;English
+0349657;Jimi Hendrix Live;1989;7.6;6;Documentary;50;English
+0111739;I Have a Date with Spring;1994;6.9;129;Drama;86;Cantonese
+0073888;What Can I Do with a Male Nude?;1985;5.1;81;Short;23;English
+0258965;The Significant Other;1994;4.2;8;Short;10;English
+0056521;Mammals;1962;5.7;1154;Comedy;10;None
+0438168;Losing Lois Lane;2004;6.6;148;Comedy;20;English
+0202234;O anthropos tis karpazias;1969;5.3;190;Comedy;97;Greek
+0787094;Mujeres en el parque;2006;5.8;124;Drama;102;Spanish
+0093169;Hector;1987;6.9;1840;Comedy;95;Flemish
+0080347;De plaats van de vreemdeling;1979;7.4;33;Documentary;87;Dutch
+0129950;Gastone;1960;6.2;108;Comedy;102;Italian
+0085923;The Megillah 83;1983;6.7;14;Musical;80;Yiddish
+0386423;Dust to Glory;2005;7.5;981;Documentary;97;English
+0092049;Tan-Badan;1986;5.0;43;Drama;115;Hindi
+0217608;Laawaris;1999;4.4;164;Action;117;Hindi
+0413673;Goodbye, Istanbul;1966;6.2;9;Drama;None;Turkish
+0046267;Sailor of the King;1953;6.9;587;Action;83;English
+0157941;La loterie du bonheur;1953;6.1;19;Comedy;90;French
+0086503;Un bon petit diable;1983;6.1;63;Drama;90;French
+0469087;Ghetto Dawg 2;2005;6.0;99;Drama;None;English
+0090842;The Missed Date;1986;6.7;16;None;92;Cantonese
+0093865;Riot on 42nd St.;1987;5.2;110;Drama;89;English
+0093804;Seven Years Itch;1987;5.2;80;Comedy;82;Cantonese
+0209203;Öksüzler;1973;5.1;376;Drama;84;Turkish
+0093216;River of Fireflies;1987;7.9;21;Drama;115;Japanese
+0109657;Duoddara árbi;1994;5.3;14;Drama;82;Saami
+0235169;Agrajan;1995;5.3;10;None;None;Malayalam
+0335265;The Lonely Affair of the Heart;2002;5.0;8;Drama;89;Japanese
+0113350;The Red Wolf;1995;6.1;359;Action;92;Cantonese
+1003043;Primera comunión;2006;8.7;8;Short;15;Spanish
+0435774;When Tyrants Kiss;2004;7.2;18;Mystery;93;English
+0133008;Prison Guard;1970;7.5;42;Comedy;90;Czech
+1159988;Phobia;2007;7.7;29;Short;18;English
+0117212;Nu är pappa trött igen;1996;3.7;114;Comedy;82;Swedish
+0342535;Wisdom of the Pretzel;2002;6.2;212;Comedy;101;Hebrew
+0075118;La question;1977;7.0;86;Drama;112;French
+0393849;Take Me to Your Leader;2008;7.7;23;Comedy;71;English
+0269395;Je suis un super héros;2000;5.9;9;Short;5;French
+0353566;Ito ang Pilipino;1966;5.2;9;Action;None;Tagalog
+0122475;Eno sfyrize to traino;1961;5.2;13;Crime;95;Greek
+1027198;Witch House: The Legend of Petronel Haxley;2008;4.6;87;Horror;85;English
+0443526;Gypo;2005;6.8;435;Drama;98;English
+0073701;Shi san bu da;1975;6.9;11;Comedy;None;Cantonese
+0042642;Killer Shark;1950;4.3;203;Adventure;76;English
+0495550;À la fenêtre;2003;4.2;7;Short;9;None
+0294631;Hungry Hearts;2002;6.6;68;Comedy;82;English
+0076804;Telefon;1977;6.6;5448;Action;102;English
+0066027;Ma chi t'ha dato la patente?;1970;6.6;74;Comedy;85;Italian
+0443841;All About Mankiewicz;1983;7.0;31;Documentary;103;English
+0376966;Vorspiel;1987;6.2;15;Comedy;92;German
+0121386;Huo bao da quan zi;1992;3.9;17;Action;87;Cantonese
+0473088;Stan;2011;8.9;34;Comedy;None;English
+0211216;Barbara;1970;6.4;15;Drama;91;English
+0059576;The Far Countries;1965;5.9;103;Short;17;French
+0400533;Incident at Haystack Landing;1999;5.0;8;Horror;None;English
+0059551;L'or du duc;1965;6.2;20;Comedy;90;French
+1130771;When We're Old and Love Means Nothing;2006;9.6;8;Short;14;English
+0449972;Bride of Silence;2005;7.1;77;Drama;114;Vietnamese
+0407557;Balasubas;1998;7.6;12;Action;None;Filipino
+0254148;Guilty or Innocent;1963;4.2;17;Drama;86;Greek
+0163824;Serenade for the 12th Floor;1976;7.3;69;Comedy;69;Romanian
+0095940;High Frequency;1988;6.4;251;Thriller;105;Italian
+0248845;Hedwig and the Angry Inch;2001;7.7;34702;Comedy;95;English
+0360710;The Key;2002;5.9;9;Short;20;English
+0491769;First Date;2004;9.6;9;Short;None;English
+0120789;Pleasantville;1998;7.5;125771;Comedy;124;English
+0874978;Penvriendin;2006;6.6;50;Short;10;Dutch
+0309934;Nébule;1973;6.5;7;Short;10;None
+0154953;Ninaithale Inikkum;1979;6.9;271;Musical;141;Tamil
+0211762;The Bewitched Boy;1955;8.0;374;Animation;44;Russian
+0094331;Wish You Were Here;1987;6.8;2795;Comedy;88;English
+0344857;Arven fra Seveso;1985;4.3;8;Documentary;59;Danish
+0362241;Third Hand;1981;7.2;14;Drama;None;Mandarin
+0261761;Jesus Cristo, Eu Estou Aqui;1970;5.1;14;Comedy;72;Portuguese
+0491778;Jones;2005;8.2;10;Drama;76;English
+0102965;Speak of the Devil;1989;4.6;91;Comedy;99;English
+0346898;Down to Hell;1997;5.6;324;Horror;47;Japanese
+0060224;Los celos y el duende;1967;5.3;8;Comedy;90;Spanish
+0384994;Hidden in Plain Sight;2003;6.3;62;Documentary;90;English
+0469307;Crónica de un fraude;1988;9.2;6;Documentary;60;Spanish
+0279676;Love Bandits;2001;5.8;11;Drama;92;French
+1119631;Rifle Workbook;2007;6.8;18;Short;6;English
+0126350;Id al-Mairun;1967;7.7;7;Short;None;None
+0284375;Just One More Time;1974;5.7;25;Comedy;46;English
+0396112;Ma vie en cinémascope;2004;6.6;381;Biography;105;French
+0119171;Future Fear;1997;2.7;332;Action;77;English
+0401571;Latchkey;2004;8.6;37;Short;17;English
+0330811;Regret Not Speaking;2011;6.2;15;None;None;English
+0243889;Eureka;2000;7.8;3762;Drama;217;Japanese
+0447321;Fried Rice;2004;7.6;15;Short;9;Dutch
+1100593;The Strain;2007;5.2;31;Short;16;English
+0989654;The Haunted School;2007;4.1;221;Horror;89;Cantonese
+1091749;A Clean Sweep;1958;5.6;13;Short;29;English
+0156361;Bhootnath;1963;6.5;62;Adventure;129;Hindi
+0152098;PSI Factor;1980;4.8;77;Mystery;91;English
+0059702;Heart of a Mother;1966;6.5;25;Drama;100;Russian
+0355537;Hitler Brothers;1997;3.9;38;Comedy;None;Malayalam
+0048171;Hit the Deck;1955;6.6;799;Comedy;112;English
+0184240;Baci e abbracci;1999;6.6;487;Comedy;104;Italian
+0093892;Run If You Can;1988;5.5;73;Thriller;89;English
+0143161;The Burning Season;1993;6.8;25;None;104;English
+0116239;Ren yue huang hun;1995;6.1;29;Mystery;98;Mandarin
+0441771;King of Fools;2004;6.6;68;Animation;9;None
+0332136;If Only;2004;7.1;32146;Comedy;92;English
+0392305;Krug;2004;6.5;13;Short;8;English
+0054210;Shadows of Adultery;1961;6.9;93;Drama;95;French
+0374496;America Brown;2004;5.5;297;Drama;88;English
+0070713;Solyonyy pyos;1974;6.9;47;Comedy;74;Russian
+0482179;Café;1990;6.5;12;Short;10;English
+0420966;Wounded Love;2004;7.4;2450;Drama;143;English
+0328132;One-Way Ticket to Mombasa;2002;6.0;1782;Comedy;88;Finnish
+0114940;Wild Malibu Weekend!;1995;3.8;76;Comedy;80;English
+0223722;Membakar Matahari;1983;5.7;13;Action;90;Indonesian
+0454602;Fair Play;2006;6.1;765;Action;103;French
+0432965;Mr. Patterns;2004;7.0;7;Documentary;54;English
+0446447;Regina;1990;6.5;45;Drama;108;Estonian
+0049144;Sunday in Peking;1956;7.0;432;Documentary;22;French
+0179894;Irish Whiskey Rebellion;1972;2.8;33;Drama;93;English
+0057714;Zatoichi on the Road;1963;7.2;1691;Action;85;Japanese
+0484842;Great Pith and Moment;2005;5.4;7;Short;4;English
+0341076;Untold;2002;3.6;1922;Action;86;English
+0246877;Puthayal;1997;6.2;59;None;144;Tamil
+0325263;Difunta Correa;1975;5.8;10;Comedy;86;Spanish
+0254551;Marea suave;1992;4.9;16;Action;94;Spanish
+0968273;Le flame del paradis;2006;7.2;11;Drama;95;Italian
+0047188;The Lone Gun;1954;5.8;437;Western;76;English
+0104016;Coup de jeune;1993;4.2;74;Comedy;88;French
+0351555;Piku;1984;8.2;6;Animation;None;Albanian
+0295983;Hans and the Silver Skates;1991;5.8;29;Adventure;50;English
+0476681;Waiter;2006;7.0;3030;Comedy;97;Dutch
+0041512;Into the Straight;1950;5.3;8;Drama;82;English
+0095799;Otto - Der Neue Film;1987;5.8;2334;Comedy;82;German
+0065212;Wie heiratet man einen König;1969;6.8;77;Family;74;German
+0381167;The Epic Tale of Kalesius and Clotho: A Meditation on the Impossibility of Romantic Love in a Rapidly Expanding Universe;2003;7.7;18;Comedy;27;English
+0872195;Dancing with the Pros;2005;6.8;49;Short;3;English
+0351169;Kaulayaw;2002;7.5;12;Drama;100;Filipino
+0830826;Michigan;2006;6.8;5;Short;None;French
+0067324;Land of Silence and Darkness;1971;8.0;2768;Documentary;85;German
+0460511;Monsieur Étienne;2005;6.6;13;Short;22;French
+0076929;Wizards;1977;6.5;11307;Animation;82;English
+0758766;Music and Lyrics;2007;6.5;100884;Comedy;104;English
+0430314;Love's Curse;2004;7.8;12;Short;29;English
+0183111;El genial Detective Peter Pérez;1952;7.2;16;Comedy;103;Spanish
+0120378;Too Late;1996;7.6;652;Drama;106;Romanian
+0228700;Paradise;1995;6.6;123;Documentary;25;Kazakh
+0117320;A Perfect Candidate;1996;7.2;271;Documentary;105;English
+0070131;Lifesize;1974;6.5;358;Comedy;101;French
+0100275;The Wandering Soap Opera;2017;6.5;323;Comedy;80;Spanish
+0431606;Alter Egos;2004;9.3;12;Short;9;English
+0077773;Queen Bee;1978;6.4;125;Mystery;140;Japanese
+0161456;Contra Conspiracy;1990;3.9;45;Action;88;English
+0757376;You and Me;2005;7.4;454;Drama;88;Mandarin
+0100201;Mr. Destiny;1990;6.4;12175;Comedy;110;English
+0451232;Time and Tide;2006;6.8;49;Drama;81;English
+0180781;Kill a Dragon;1967;4.5;200;Action;91;English
+0164356;As Time Goes By;1997;7.6;23;Documentary;58;Cantonese
+0178444;Figurine;1997;7.7;51;Drama;99;Italian
+0050778;Not of This Earth;1957;6.3;1775;Horror;67;English
+0089522;Honeymoon;1985;4.6;115;Thriller;101;English
+0293019;Castle Eros;2002;5.2;168;Fantasy;92;English
+0349248;The Witch Affair;2003;5.3;277;Action;102;Spanish
+0199952;Planas, testimonio de un etnocidio;1971;8.0;7;Documentary;50;Spanish
+0490204;Reign Over Me;2007;7.4;94708;Drama;124;English
+0841163;Second Round;2006;7.9;15;Short;26;English
+0164442;The Bone Crushing Kid;1979;5.9;31;Action;89;Mandarin
+1024962;Here We Are!;2004;6.6;291;Comedy;90;Greek
+1103971;The Chubbchubbs Save Xmas;2007;5.8;433;Animation;5;English
+0399678;The 16th Annual Soul Train Music Awards;2002;4.6;21;Family;180;English
+0249549;The Golden Twenties;1950;6.4;27;Documentary;68;English
+0068023;¡Cómo hay gente sinvergüenza!;1972;6.6;20;Comedy;92;Spanish
+0377518;Bingbong: The Vincent Crisologo Story;1991;7.9;25;Action;120;Tagalog
+0193433;Ghosts Leave the Peaks;1955;4.2;22;Adventure;96;Armenian
+0294405;Scenes of Fires;1978;6.4;14;Crime;95;German
+0108360;Tomcat: Dangerous Desires;1993;3.8;291;Horror;85;English
+0058332;María Rosa;1965;7.3;19;Drama;97;Spanish
+0273041;13th Child;2002;3.0;848;Horror;99;English
+0353700;Malappuram Haji Mahanaya Joji;1994;6.3;174;Comedy;140;Malayalam
+0048348;Ein Mann vergißt die Liebe;1955;5.1;12;Crime;95;German
+0261031;Maalmasala;1992;5.5;10;Action;None;Marathi
+0042206;Armored Car Robbery;1950;7.0;2674;Action;67;English
+0976162;Postpartum;2007;6.2;25;Thriller;106;English
+0176097;Rocktober Blood;1984;4.8;693;Horror;93;English
+0857316;Gasoline Blood;2006;7.5;74;Short;9;English
+0119055;The Eighteenth Angel;1997;4.9;1590;Horror;95;English
+0107786;Passage à l'acte;1993;7.2;332;Short;12;None
+0926029;99.9 FM;2005;4.9;47;Crime;90;Hindi
+0839780;Devil's Rose;2005;7.9;29;Short;17;English
+0128133;The Harmonists;1997;7.2;3415;Biography;126;German
+0116196;Hearst Castle: Building the Dream;1996;6.4;82;Documentary;40;English
+0080886;L'homme à tout faire;1980;7.1;104;Drama;99;French
+0150533;Femmina;1998;4.9;74;Drama;93;Italian
+0479948;Living & Dying;2007;3.9;1904;Action;90;English
+0353975;Sandesham;1991;9.0;4225;Comedy;138;Malayalam
+0446564;Bela Noite Para Voar;2009;5.7;101;Drama;None;Portuguese
+0110356;Linda Sara;1994;7.2;100;Comedy;107;Spanish
+0053438;Web of Suspicion;1959;3.5;9;Crime;70;English
+0342795;Traveller of Rey;2001;5.6;163;Action;115;Persian
+0807038;Road Spain;2008;5.7;17;Drama;85;Catalan
+0420233;A Wonderful Night in Split;2004;7.4;1602;Crime;100;Croatian
+0292222;Save the Sea;1993;3.7;34;Documentary;None;English
+0421039;35th NAACP Image Awards;2004;3.6;20;None;120;English
+0393127;The Carol Burnett Show in London;1970;8.8;19;Comedy;50;English
+0288046;Woman of the Afternoon: Incite!;1979;7.8;15;Drama;69;Japanese
+0123873;Ground Zero/Sacred Ground;1997;6.1;11;Short;9;English
+0857280;God Thinks You're a Loser;2009;6.8;39;Comedy;89;English
+0198757;The Last Desperate Hours;1974;6.8;109;Action;90;Italian
+0093016;Feldmann saken;1987;6.4;32;Crime;87;Norwegian
+0096821;Animated Self-Portraits;1989;6.6;262;Animation;8;None
+0435597;The Adventures of Greyfriars Bobby;2005;6.2;544;Adventure;104;English
+0891604;Todo un gallo;2006;7.4;7;Short;14;Spanish
+0836648;Escape;2006;9.2;15;Short;6;None
+0071851;Moments;1974;6.7;8;Drama;102;English
+0122997;Boldogtalan kalap;1981;6.9;20;Drama;84;Hungarian
+0369666;Lihim ni Madonna;1997;6.9;16;Drama;115;Filipino
+0097966;Next;1990;7.4;260;Animation;5;English
+0820096;Playing the Victim;2006;7.1;2308;Comedy;95;Russian
+0084695;The Slumberparty Massacre;1982;5.7;13504;Horror;77;English
+0384788;3azima;2003;7.0;9;Drama;5;English
+0119244;Hacks;1997;5.0;347;Mystery;93;English
+0264916;Monarch;2000;5.4;117;Biography;109;English
+0099910;Good Evening, Mr. Wallenberg;1990;6.5;975;Biography;118;Swedish
+0140683;Volchya staya;1975;6.9;13;Drama;90;Russian
+0490679;Sabancik;1981;4.7;49;None;75;Turkish
+1152758;Dear Zachary: A Letter to a Son About His Father;2008;8.5;35330;Documentary;95;English
+0261457;Ódio;1977;6.7;41;Drama;125;Portuguese
+0111815;Záhada hlavolamu;1993;6.8;93;Family;97;Czech
+0084306;El marqués, la menor y el travesti;1983;4.3;42;Comedy;75;Spanish
+0284404;Power Force;1991;6.8;12;Action;120;English
+0889651;Rock'n Roll Never Dies;2006;5.3;316;Comedy;131;Finnish
+0068755;Foreigners;1972;5.5;35;Drama;113;Greek
+0338178;The Cake;2010;5.4;10;Animation;8;None
+0093555;Mohre;1987;5.2;79;Drama;104;Hindi
+0047127;Jail Bait;1954;3.6;2615;Crime;71;English
+0104681;Langer Samstag;1992;6.4;56;Comedy;103;German
+0454830;Die Gelegenheit;2004;8.0;20;Short;21;German
+0071165;Secrets of the Treasure of the Jinn Valley;1974;6.5;141;Comedy;137;Persian
+0128372;Noi donne siamo fatte così;1971;6.1;112;Comedy;112;Italian
+0205095;A Modern Story;1957;8.0;12;Drama;91;German
+0789771;Délivrez-moi;2006;6.2;162;Drama;100;French
+0097269;A Thousand and One Wives;1989;6.2;10;Drama;90;Hebrew
+0129885;Dogstar;1997;7.1;212;Drama;83;English
+0371218;The Black Candles;1962;7.0;204;Drama;140;Arabic
+0170104;Kay tagal kang hinintay;1998;7.9;30;Drama;None;Tagalog
+0802940;American Dream;2002;8.2;8;Short;6;English
+0411096;All My Life;2004;6.5;121;Drama;110;Filipino
+0795957;No Vacancy;2005;7.8;20;Documentary;90;English
+0140504;Reflexus;1998;7.6;41;Sci-Fi;8;English
+0050716;Il momento più bello;1957;6.1;75;Comedy;92;Italian
+0170987;Nevera po slovensky;1981;6.9;227;Comedy;143;Slovak
+0222812;Beyond Re-Animator;2003;5.8;11740;Comedy;96;English
+0267090;Veruyu v lyubov;1986;5.4;11;Romance;85;Russian
+0098323;Showbiz - eller hvordan bli kjendis på en-to-tre!;1989;6.3;156;Comedy;97;Norwegian
+0284000;Close to Home;2001;7.0;16;Documentary;None;None
+0202682;Where a Good Man Goes;1999;6.9;492;Action;90;Cantonese
+0048275;Merry-Go-Round;1956;7.8;1380;Romance;90;Hungarian
+0087812;Nights Without Moons and Suns;1984;7.3;65;Crime;95;Spanish
+0800966;Sniffer;2006;6.8;559;Short;10;None
+0045481;After the Ball;1957;6.2;70;Biography;89;English
+0830813;Furtivo;2008;6.4;18;Comedy;82;Spanish
+0072126;Schweizer im spanischen Bürgerkrieg;1974;7.9;10;Documentary;87;French
+0085597;Una gita scolastica;1983;7.1;278;Comedy;90;Italian
+0184894;Shanghai Noon;2000;6.6;123874;Action;110;English
+0157901;Kiyida;1998;6.7;62;Short;7;None
+0081782;Hex;1980;6.5;480;Crime;94;Cantonese
+0124959;Pizza Runners;1996;7.0;22;Comedy;None;English
+1137450;Death Wish;2018;6.3;69674;Action;107;English
+0360090;Torakku yarô: Ichiban hoshi kita e kaeru;1978;7.2;20;Action;110;Japanese
+0402814;The BAFTA TV Awards 2004;2004;7.7;29;None;None;English
+0056627;Damon and Pythias;1962;5.0;239;Adventure;101;English
+0045582;Brudebuketten;1953;5.0;15;Comedy;92;Norwegian
+1034010;Bad Meat;2011;3.5;868;Comedy;92;English
+0480543;Jason vs. Sadako;2003;6.5;22;Animation;4;English
+0252102;WrestleMania IX;1993;5.9;800;Action;163;English
+0140336;Local Color;1977;7.2;47;Drama;116;English
+0059062;Le coup de grâce;1965;5.7;57;Drama;101;French
+0242952;Time Burst: The Final Alliance;1989;4.0;58;Action;93;English
+0136779;Les deux font la paire;1954;5.8;18;Comedy;86;French
+0136524;Secretul cifrului;1960;6.9;41;Thriller;80;Romanian
+0137009;I Like Mike;1961;7.2;18;Comedy;120;Hebrew
+0397316;Armaan;1966;6.9;64;Comedy;None;Urdu
+0323741;Purgatory Flats;2003;5.5;413;Romance;102;English
+0243212;To Love Too Much;2001;6.3;76;Drama;93;Spanish
+0968280;Die Hochstapler;2006;7.3;132;Documentary;84;German
+0051907;Maracaibo;1958;6.4;103;Adventure;88;English
+0202393;Adventures of the Polar Cubs;1979;6.5;43;Animation;78;Japanese
+0951361;Spooked;2005;7.8;30;Horror;90;English
+0119390;Isle of Lesbos;1997;5.3;124;Comedy;98;English
+0215307;Vartha;1986;7.2;81;Action;163;Malayalam
+0078517;Warriors Two;1978;7.3;1249;Action;95;Cantonese
+0226584;Variations on Ah! Vous dirai-je, maman;1987;6.6;8;Animation;14;English
+0046389;The System;1953;6.4;117;Crime;90;English
+1155430;David Lynch: A BAFTA Interview;2007;7.9;22;None;None;English
+0210725;The Hands of Che Guevara;2006;7.7;16;None;None;Spanish
+0374155;O Rapaz do Trapezio Voador;2002;6.5;14;Drama;97;Portuguese
+0312269;Late Summer;2001;7.5;381;Short;28;English
+0047942;City of Shadows;1955;5.5;58;Crime;70;English
+0340377;The Station Agent;2003;7.6;69192;Comedy;89;English
+1054561;Bajo la sombra de la sangre;2006;8.0;8;Short;16;Spanish
+0283546;Just Little Birds;2001;6.2;49;Short;13;None
+0385496;Affairs with Bears;2002;8.1;19;Documentary;27;English
+0213527;Bombing;2000;6.3;8;Documentary;60;Hebrew
+0186669;Up for the Rising Sun;1997;5.7;12;Drama;None;Cantonese
+0088645;1918;1985;6.2;401;Drama;94;English
+0175016;The Apostate;1987;5.7;27;Sci-Fi;163;Russian
+0333376;Klescar;2002;7.6;47;Drama;77;Slovenian
+1010465;De wieg van het pissend Ketje;2008;6.4;18;Documentary;91;French
+0109198;Bad Girls;1994;5.2;12316;Action;99;English
+0113453;How to Deserve a Princess;1995;5.7;83;Family;72;Czech
+0089270;Heng cai san qian wan;1987;5.9;131;Adventure;93;Cantonese
+0387353;Like Twenty Impossibles;2003;7.1;78;Drama;17;English
+0420942;Sutura;2003;6.2;7;Drama;7;Spanish
+0391892;Crying Ladies;2003;6.8;238;Comedy;111;Filipino
+0106567;Chu sheng zhi du;1994;6.0;14;Crime;91;Cantonese
+0385510;Anmut sparet nicht noch Mühe;1980;7.0;21;Documentary;101;German
+0965564;WCW Bash at the Beach;1995;5.2;65;Sport;180;English
+0328492;Sunset Street;1983;6.8;18;Drama;99;Mandarin
+0081786;Yesli by ya byl nachalnikom;1981;6.5;10;Comedy;80;Russian
+0117091;Mother;1996;6.9;6129;Comedy;104;English
+1155067;Oftalmós;2007;8.3;17;Short;16;Spanish
+1120891;Beanbag;2007;8.0;10;Short;19;English
+0380420;Freshman Orientation;2004;5.3;1663;Comedy;92;English
+0963354;Under the Raven's Wing;2007;4.5;74;Thriller;87;English
+0289418;Reflection of Evil;1989;8.3;7;None;None;English
+0119940;Academy Boyz;1997;6.8;212;Drama;90;English
+0148610;Pirate's Gold;1955;5.3;14;Animation;7;English
+0426403;The Audition;2004;7.2;22;Drama;16;English
+0295348;Ilegalët;1976;6.8;8;Action;87;Albanian
+0155682;Dr. Bezbarua;1969;8.2;19;Thriller;None;Assamese
+0188269;La vendetta dei gladiatori;1964;4.6;48;Adventure;98;Italian
+0105813;White Sands;1992;6.0;7733;Action;101;English
+1003070;Vend;2006;8.3;16;Short;None;English
+0100800;Torn Apart;1990;5.7;189;Drama;96;English
+0333394;Emei fei dao;1985;6.6;7;Crime;None;Mandarin
+0416251;Texas - Kabul;2004;8.1;15;Documentary;93;German
+0985107;Vous êtes de la police?;2007;6.1;58;Comedy;94;French
+0304891;The Very Best of the Ed Sullivan Show 2;1991;7.7;52;Comedy;120;English
+0113101;Four Rooms;1995;6.8;101934;Comedy;98;English
+0097008;Cameron's Closet;1988;5.0;933;Fantasy;86;English
+0116852;Leily Is with Me;1996;7.6;4437;Adventure;95;Persian
+0353608;Kankettu;1991;6.4;97;Action;None;Malayalam
+0078100;Teen Lust;1978;4.3;245;Comedy;89;English
+0337721;The Snow Walker;2003;7.3;10433;Drama;103;English
+0424445;Sinatra and Friends;1977;7.5;30;Music;60;English
+0084078;Hit and Run;1982;5.5;93;Mystery;96;English
+0110952;The Reconstruction;1994;6.1;17;Documentary;60;Hebrew
+0211971;Born for Hell;1976;5.2;807;Drama;92;English
+0478827;Still Life;2005;7.4;9;Short;9;English
+0076779;Summer Affair;1971;5.6;172;Drama;91;Italian
+0093658;Number One with a Bullet;1987;4.8;560;Action;103;English
+0094913;Cover Up: Behind the Iran Contra Affair;1988;7.7;220;Documentary;72;English
+0953453;King of the Cage: Payback;2005;4.7;10;Sport;None;English
+0267009;Diary;2000;6.9;11;Animation;11;None
+0299591;Britney Spears Live from Las Vegas;2001;7.6;1046;Documentary;90;English
+0057995;Daylight Robbery;1964;8.3;14;Comedy;57;English
+0420189;Silencio de muerte;1991;5.0;8;Horror;90;Spanish
+0110649;The New Age;1994;5.7;1146;Comedy;112;English
+1075381;Ramsese vembud;1985;5.8;14;Animation;10;None
+0183704;Sister Street Fighter: Hanging by a Thread;1974;6.6;421;Action;85;Japanese
+0342434;Fondali notturni;2000;8.2;7;None;97;Italian
+0062204;Risky Business;1967;7.1;532;Drama;105;French
+0406801;The Gentleman Don La Mancha;2004;8.2;40;Drama;65;English
+0064306;Extinct Pink;1969;5.9;317;Animation;6;English
+0282629;January Oru Orma;1987;6.9;106;Action;115;Malayalam
+0301619;Mis;2001;6.4;29;Short;11;Dutch
+0207314;Asalto en Tijuana;1984;4.9;18;Action;None;Spanish
+0137795;Le grand bluff;1957;5.0;38;Comedy;94;French
+0377931;Four.50;2003;6.3;16;Action;6;English
+0075653;Alaap;1977;6.7;349;Drama;160;Hindi
+0889606;Towards Zero;2007;5.9;648;Comedy;104;French
+0284045;Dead Above Ground;2002;3.2;387;Crime;90;English
+0417220;Unbeatable Harold;2006;5.3;175;Comedy;82;English
+0787475;Hot Rod;2007;6.7;82438;Comedy;88;English
+0390178;Lakshminivasam;1968;7.4;6;None;None;Telugu
+0381989;Desh Ke Dushman;1989;4.1;16;Action;None;Hindi
+0050892;Rembrandt: Painter of Man;1957;7.8;57;Documentary;20;Dutch
+1135983;Sasori;2008;4.9;376;Action;101;Japanese
+0117467;Rescuing Desire;1996;7.4;83;Drama;111;English
+0092720;Capriccio;1987;4.9;1084;Drama;98;English
+0210707;Guilty Relationships;1975;4.5;17;Crime;100;Greek
+0157249;Wrestling with God;1990;7.2;24;Biography;71;English
+0295595;Sensaciones;1991;7.0;25;Drama;80;Spanish
+0422550;Just Add Pepper;2002;6.6;32;Comedy;90;English
+0055632;The Young Doctors;1961;6.8;545;Drama;100;English
+0445013;Gifting It: A Burning Embrace of Gift Economy;2002;5.3;13;Documentary;74;English
+0167923;Elvis: Aloha from Hawaii;1973;8.5;1374;Documentary;87;English
+0087647;Love Lust and Ecstasy;1981;5.1;42;Crime;90;Greek
+0162191;Benfica - Campeão Europeu;1961;8.3;78;Documentary;11;Portuguese
+0049803;Arashi;1956;7.6;13;Drama;108;Japanese
+0053016;Lone Texan;1959;6.7;37;Western;71;English
+0087652;O Lugar do Morto;1984;6.4;209;Drama;120;Portuguese
+0312883;Kya Yehi Pyaar Hai;2002;3.9;466;Drama;145;Hindi
+0106477;Bewogen koper;1993;6.8;39;Documentary;106;Dutch
+0171601;Owe dni;1950;3.3;7;Short;None;Bulgarian
+0063687;Third Eye Butterfly;1968;6.9;13;Short;10;None
+0057680;What's a Nice Girl Like You Doing in a Place Like This?;1963;6.4;2002;Short;9;English
+0133331;Abba Ganuv;1987;6.4;173;Drama;87;Hebrew
+0070716;Superdad;1973;5.3;749;Comedy;96;English
+0094020;Square Dance;1987;5.9;975;Drama;112;English
+0203093;Excuse Me, Do You Like Sex?;1968;6.0;23;Documentary;90;Italian
+0070895;Walking Tall;1973;6.9;5651;Action;125;English
+0192701;Turbulence 2: Fear of Flying;1999;4.2;2178;Action;101;English
+0303394;Sister Helen;2002;7.7;266;Documentary;90;English
+0276780;Banus, the Horse Thief;1967;6.5;46;Adventure;None;Turkish
+0234560;The Rainbow Avenger;1998;2.5;15;Comedy;12;English
+0059184;Love Hunger;1962;5.4;13;Crime;72;Spanish
+0260573;Why Take Chances?;1952;6.7;6;Animation;10;English
+0275933;Army Medicine in Vietnam;1970;7.2;15;Documentary;29;English
+0241374;Digging Holes;1999;6.6;6;Drama;None;English
+0284067;Down from the Mountain;2000;7.2;666;Documentary;98;English
+0090625;Amateur Night;1986;5.7;14;Musical;91;English
+0225761;Fluxes;1968;6.6;51;Short;24;None
+0049810;Zoku sûpâ jaiantsu;1957;5.4;35;Action;52;Japanese
+0311048;Un día de suerte;2002;6.1;267;Drama;95;Spanish
+0104668;Lady Macbeth von Mzensk;1992;7.1;81;Drama;100;Russian
+0437986;The Duel;2004;6.9;14;Drama;3;None
+0161981;Slayers;1995;7.0;849;Animation;63;Japanese
+0056162;Lad: A Dog;1962;7.3;104;Drama;98;English
+0471459;The Troubled Interviewee;2002;8.2;27;Short;15;English
+0790677;TV Land Presents the Greatest Commercials of All Time;1999;7.6;8;Documentary;60;English
+0305819;Meleparambil Aanveedu;1993;7.8;620;Comedy;160;Malayalam
+0111583;Passions;1994;6.8;282;Drama;111;Russian
+0238015;All Access: Front Row. Backstage. Live!;2001;8.2;94;Documentary;None;English
+1113794;The Godfather: Behind the Scenes;1971;7.6;79;Documentary;9;English
+0381700;Warsaw;2003;6.2;452;Drama;104;Polish
+0082083;Blood Beach;1980;4.5;2459;Comedy;92;English
+0237704;The Witch Doctors;2000;3.9;24;Comedy;89;Italian
+0431449;L'uomo perfetto;2005;6.2;590;Comedy;95;Italian
+0088316;Un amour interdit;1984;5.2;58;Drama;95;French
+0177921;A Mother's Love;1998;7.0;631;Drama;90;Persian
+0354966;Time Enough at Last;2004;7.0;39;Drama;20;English
+0135618;The Girl from Corfu;1956;6.0;50;Comedy;81;Greek
+0228147;Climates;1974;7.6;12;Short;10;None
+0324001;Smelovo pulya boitsya;1971;6.6;15;None;83;Russian
+0191458;Sinal Vermelho - As Fêmeas;1972;4.6;9;Crime;103;Portuguese
+0114236;Ravan Raaj: A True Story;1995;6.2;125;Action;153;Hindi
+0056951;Web of Fear;1964;5.9;46;Crime;88;French
+0104715;Lettera da Parigi;1993;5.0;12;Drama;97;Italian
+0145653;Angela's Ashes;1999;7.3;21442;Biography;145;English
+0260430;Tormenta;1983;7.1;16;Drama;95;Portuguese
+0149946;Boy Partisans;1951;5.9;15;Drama;97;Korean
+0843270;Crazy Stone;2006;7.6;3596;Comedy;98;Mandarin
+0276542;Sunehra Sansar;1975;5.4;26;Drama;None;Hindi
+0113102;Four Rooms;1995;6.8;101934;Comedy;98;English
+0054977;Story of the Golden Boot;1961;5.9;156;Family;83;Polish
+0211967;Bumerang;1979;6.7;17;Drama;112;Bulgarian
+0395991;Sound of Colors;2003;6.0;433;Comedy;108;Cantonese
+0477015;Intoxicated Demons;2005;8.0;66;Short;12;English
+0119617;Marianne;1997;5.2;75;Drama;90;French
+0878108;By the Wayside;2006;7.8;8;Documentary;58;English
+0313764;Wakai musumetachi;1958;7.0;11;Comedy;78;Japanese
+0450951;15 Days with You;2005;6.9;139;Comedy;94;Spanish
+0048570;Run for Cover;1955;6.7;1533;Western;93;English
+0366502;Gali Theke Rajpath;1959;5.2;23;Family;90;Bangla
+0157000;Sanctuary;1998;4.8;677;Action;99;English
+0273305;Kalapam;1998;3.2;6;None;123;Malayalam
+0177506;The Cloud and the Rising Sun;1998;6.4;32;Drama;90;Persian
+0069241;Touch Me Not;1974;5.5;65;Thriller;82;English
+0104195;Enjeru, Boku to uta wa kimi no uta;1992;5.2;7;None;110;Japanese
+0298166;The Spider Will Kill You;1976;7.1;53;Short;None;None
+0189836;Obbligo di giocare - Zugzwang;1989;6.2;12;Crime;83;Italian
+0351790;Suhana Safar;1970;6.3;55;Comedy;130;Hindi
+0457708;La terza stella;2005;5.3;234;Comedy;None;Italian
+0080608;Demasiado para Gálvez;1981;5.8;21;Thriller;89;Spanish
+0287803;Fate: Tales About Darkness;2001;7.6;5490;Comedy;119;Turkish
+0113186;A Last Note;1995;7.0;205;Drama;110;Japanese
+0105836;A Woman, Her Men, and Her Futon;1992;4.6;210;Drama;90;English
+0175772;Inspektorat i noshtta;1963;7.0;142;Crime;None;Bulgarian
+0822832;Marley & Me;2008;7.1;152799;Comedy;111;English
+0191445;Shestoy;1982;6.7;161;Action;83;Russian
+0872094;Children;2006;7.3;665;Drama;93;Icelandic
+0054286;Cruel Story of Youth;1960;7.0;2258;Crime;96;Japanese
+0320713;Vatos;2002;4.5;76;Action;99;English
+0272240;Petites filles très précoces;1979;5.5;13;None;75;French
