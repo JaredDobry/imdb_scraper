@@ -1,15 +1,6 @@
 import utils
-import metrics
 import pathlib
-from model_runner import ModelRunner, load_model
-from sklearn.linear_model import LinearRegression, Ridge
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.model_selection import GridSearchCV
-from sklearn.base import BaseEstimator
-# import numpy as np
-# import seaborn as sns
-# import pandas as pd
-# import matplotlib.pyplot as plt
+from model_runner import load_model
 
 PARENT_PATH = pathlib.Path("__dir__").parent.resolve()
 DB_PATH = PARENT_PATH/"StaticDB"
