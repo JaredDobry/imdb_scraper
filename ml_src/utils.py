@@ -2,8 +2,9 @@ import pickle
 import pathlib
 import numpy as np
 import pandas as pd
+from numbers import Real
 from collections import namedtuple
-from typing import Any, Callable, Tuple, NewType, Union
+from typing import Any, List, Tuple
 
 Feature = namedtuple('Feature', ["feature_keys", "handle"])
 
@@ -18,7 +19,7 @@ def unpickle_df(file: pathlib.Path) -> pd.DataFrame:
     return pd.DataFrame(unpickle_file(file))
 
 def get_training_nparray(df: pd.DataFrame, training_features: Tuple[Feature], disp_warning=False) -> np.ndarray:    
-    def get_prepped_arr(feature: Feature):
+    def get_prepped_arr(feature: Feature) -> List[List[Real]]:
         handle = feature.handle
         feature_keys = feature.feature_keys  
         temp_prepped = handle(df[[feature for feature in feature_keys]])
