@@ -1,11 +1,10 @@
-from os import stat
 import utils
 import pickle
 import pathlib
 import sklearn
 import numpy as np
 import pandas as pd
-from typing import Tuple
+from typing import Tuple, Any
 
 
 class ModelRunner:
@@ -47,6 +46,5 @@ class ModelRunner:
         with open(abs_path, "ab") as f:
             pickle.dump(self, f)
 
-    @staticmethod
-    def load(file: pathlib.Path):
-        return utils.unpickle_file(file)
+def load_model(file: pathlib.Path) -> ModelRunner:
+    return utils.unpickle_file(file)
