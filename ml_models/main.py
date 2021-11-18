@@ -1,3 +1,4 @@
+from os import name
 import utils
 import metrics
 import pathlib
@@ -27,37 +28,26 @@ if __name__ == "__main__":
         "production_countries",
         "status",
     ]
-        
-    feature_ls = [
-        "revenue",
-        "popularity",
-        "budget",
-        "release_date",
-    ]
     
-    feature_dict = {
-        "budget": metrics.get_budget,
-        "belongs_to_collection": metrics.get_belongs_to_collection,
-    }
+    feature_tup = (
+        utils.Feature(("budget",), metrics.get_budget),
+        utils.Feature(("belongs_to_collection",), metrics.get_belongs_to_collection),
+    )
+    features = utils.get_training_nparray(train_df.loc[0:10], feature_tup)
     
-    # print(train_df["genres"].value_counts())
-    # train_df.drop(drop_ls)
-    
+    # The line below will give you info about every column
     # print(train_df.info())
     # print(30*"=",'\n')
     
+    # This line will print all the "genres" column
     # print(train_df["genres"])
+    
+    # This line will show you all of the different possibilities for the spoken language category
     # print(train_df["spoken_languages"].value_counts())
-        
-    # print(metrics.get_belongs_to_collection(train_df["belongs_to_collection"]).value_counts())
-    # print(metrics.get_budget(train_df["budget"]).value_counts())
     
-    
-    
-    
-    
-    
-    
+
+
+    # IGNORE. Gives a heat map of how features correlate together.
     # genres = pd.get_dummies(train_df["genres"], drop_first=True)
     # train_df = pd.concat([train_df, genres], axis=1)
     # print(train_df)
@@ -69,11 +59,3 @@ if __name__ == "__main__":
     # bottom, top = ax.get_ylim()
     # ax.set_ylim(bottom + 0.5, top - 0.5)
     # plt.show()
-    
-    # print(np.count_nonzero(train_df["revenue"]))
-    # print(train_df["revenue"].value_counts())
-    # print(train_df["popularity"].value_counts())
-
-    features = utils.get_training_nparray(train_df.loc[0:10], feature_dict)
-    print(features)
-    print(train_df.corr())
