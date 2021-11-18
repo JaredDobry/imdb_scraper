@@ -16,7 +16,7 @@ def get_belongs_to_collection(ds: pd.DataFrame) -> List[List[int]]:
 def get_budget(ds: pd.DataFrame) -> List[List[float]]:
     return __get_numeric__(ds["budget"])
 
-# TODO: I'd suggest using the sklearn.preprocessing.one_hot_encoder
+# TODO: I'd suggest using the sklearn.preprocessing.one_hot_encoder OR pandas get_dummies
 # for it. Remember to return results as List[List[int]] (i.e. 0 or 1)
 # https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html
 def get_genres(ds: pd.DataFrame) -> List[List[int]]:
