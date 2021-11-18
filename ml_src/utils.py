@@ -8,7 +8,10 @@ from typing import Any, Callable, Tuple, NewType, Union
 Feature = namedtuple('Feature', ["feature_keys", "handle"])
 
 def unpickle_file(file: pathlib.Path) -> Any:
-    with open(str(file), 'rb') as f:
+    abs_path = str(file)
+    if not abs_path.endswith(".pickle"):
+        abs_path += ".pickle"
+    with open(abs_path, 'rb') as f:
         return pickle.load(f)
     
 def unpickle_df(file: pathlib.Path) -> pd.DataFrame:

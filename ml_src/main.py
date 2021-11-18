@@ -2,7 +2,7 @@ from os import name
 import utils
 import metrics
 import pathlib
-from model_base import ModelRunner
+from model_runner import ModelRunner
 from sklearn.linear_model import LinearRegression, Ridge
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import GridSearchCV
@@ -14,11 +14,13 @@ from sklearn.base import BaseEstimator
 
 PARENT_PATH = pathlib.Path("__dir__").parent.resolve()
 DB_PATH = PARENT_PATH/"StaticDB"
+MODEL_PATH = PARENT_PATH/"models"
 
 if __name__ == "__main__":
     train_df = utils.unpickle_df(DB_PATH/"train_movies.pickle")
     test_df = utils.unpickle_df(DB_PATH/"test_movies.pickle")  
 
+    # The lines below will give you info about every column
     # print(train_df.info())
     # print(test_df.info())
 
@@ -42,9 +44,12 @@ if __name__ == "__main__":
         utils.Feature(("belongs_to_collection",), metrics.get_belongs_to_collection),
     )
             
-    model_type = LinearRegression(normalize=True)
-    model = ModelRunner(model_type)
-    model.fit(train_df, feature_tup)
+    # model_type = LinearRegression(normalize=True)
+    # model = ModelRunner(model_type)
+    # model.fit(train_df, feature_tup)
+    # model.save(MODEL_PATH/"LinReg_budget_isCollection")
+    model = ModelRunner.load(MODEL_PATH/"LinReg_budget_isCollection")
+    
     print("Views per day predictions: ", model.predict(test_df))
     print("Training score: ", model.score(test_df))
 
@@ -55,20 +60,8 @@ if __name__ == "__main__":
     # model2.fit(train_df, feature_tup)
     # print("Views per day predictions: ", model2.predict(test_df))
     # print("Training score: ", model2.score(test_df))
-    
-    
-  
-    # x = 4
-    # import pickle
-    # with open("x_val.pickle", "ab") as f:
-    # #     pickle.dump(x, f)
-    #     print(pickle.load(f)
 
-    
-    # The line below will give you info about every column
-    # print(train_df.info())
-    # print(30*"=",'\n')
-    
+
     # This line will print all the "genres" column
     # print(train_df["genres"])
     
