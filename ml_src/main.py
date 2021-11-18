@@ -1,4 +1,3 @@
-from os import name
 import utils
 import metrics
 import pathlib
