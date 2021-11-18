@@ -44,14 +44,14 @@ if __name__ == "__main__":
         utils.Feature(("belongs_to_collection",), metrics.get_belongs_to_collection),
     )
             
-    # model_type = LinearRegression(normalize=True)
-    # model = ModelRunner(model_type)
-    # model.fit(train_df, feature_tup)
-    # model.save(MODEL_PATH/"LinReg_budget_isCollection")
-    model = ModelRunner.load(MODEL_PATH/"LinReg_budget_isCollection")
+    model_type = LinearRegression(normalize=True)
+    model = ModelRunner(model_type)
+    model.fit(train_df, feature_tup)
+    model.save(MODEL_PATH/"LinReg_budget_isCollection")
+    # model = ModelRunner.load(MODEL_PATH/"LinReg_budget_isCollection")
     
-    print("Views per day predictions: ", model.predict(test_df))
-    print("Training score: ", model.score(test_df))
+    # print("Views per day predictions: ", model.predict(test_df))
+    # print("Training score: ", model.score(test_df))
 
     # print(50*"=")
 
