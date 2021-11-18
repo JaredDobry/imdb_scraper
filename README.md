@@ -14,14 +14,21 @@ Then, in a terminal at imdb_scraper src:<br>
 ***poetry install***<br>
 This installs the imdb_scraper package and all of it's dependencies.
 
-## Running the scraper
+## Running the imdb scraper
 
 Run via poetry using:<br>
 ***poetry run scrape <n\>***<br>
 Where ***n*** is the number of new movies to scrape
 
+## Running the tmdb scraper
 
-## Merging data files
+Run via poetry using:<br>
+***poetry run scrape_tmdb <id_file.json\> <out_file.json\> <api_key\> <n\>***
+Where ***id_file** is a file full of json objects with a field "id" defined that corresponds to a tmdb id,
+***out_file*** is the file to read/write to/from, ***api_key*** is your api key for tmdb, and ***n*** is the number of non-adult movies to query in total.
+
+
+## Merging imdb data files
 
 Run via poetry using:<br>
 ***poetry run merge <from\> <to\> <is_blacklist\>***<br>
