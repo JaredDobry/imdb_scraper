@@ -4,8 +4,8 @@ import pandas as pd
 from collections import namedtuple
 
 # TODO: @Jared and Hyun, every one of these functions should return a
-# List[List[numeric]] -> Since we need one hot encoding, many of these will
-# return a two dimensional data collection. Therefore, the get_training_nparray
+# Category[List[List[numeric]], List[str]] -> Since we need one hot encoding, many of these will
+# return two dimensional data collection. Therefore, the get_training_nparray
 # function just assumes that it data will always be 2-dimensional
 
 Category = namedtuple("Category", ["category_vals", "category_column_names"])
