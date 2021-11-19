@@ -21,7 +21,7 @@ class ModelRunner:
        
     def __get_feature_arr(self, df: pd.DataFrame, disp_warning=False) -> np.ndarray:
         self.__check_fit()
-        return utils.get_training_nparray(df, self.feature_tup, disp_warning)  
+        return utils.get_training_nparray(df, self.feature_tup, disp_warning)
     
     def __get_y(self, df: pd.DataFrame) -> np.ndarray:
         return df[self.prediction_col]
@@ -29,13 +29,18 @@ class ModelRunner:
     def fit(self, df: pd.DataFrame, feature_tup: Tuple[utils.Feature]) -> None:
         self.is_fit = True
         self.feature_tup = feature_tup
-        X = self.__get_feature_arr(df, disp_warning=True)
+        X, self.feature_names = self.__get_feature_arr(df, disp_warning=True)
         y = self.__get_y(df)
         self.feature_names = [", ".join(feature.feature_keys) for feature in feature_tup]        
         self.model.fit(X, y)
         
+    def __check_feature_names(self, feature_names: List[str]) -> None:
+        if feature_names != self.feature_names:
+            raise AttributeError(f"Testing attributes ({feature_names}) don't line up with trained feature names ({self.feature_names}).")
+                
     def predict(self, df: pd.DataFrame) -> np.ndarray:
-        X = self.__get_feature_arr(df)
+        X, feature_names = self.__get_feature_arr(df)
+        self.__check_feature_names(feature_names)
         return self.model.predict(X)
     
     def get_score(self, df: pd.DataFrame) -> float:

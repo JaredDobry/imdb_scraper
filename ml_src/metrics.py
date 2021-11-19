@@ -1,27 +1,38 @@
-from typing import List
+from typing import List, Dict, Tuple
 import numpy as np
 import pandas as pd
+from collections import namedtuple
 
 # TODO: @Jared and Hyun, every one of these functions should return a
 # List[List[numeric]] -> Since we need one hot encoding, many of these will
 # return a two dimensional data collection. Therefore, the get_training_nparray
 # function just assumes that it data will always be 2-dimensional
 
+Category = namedtuple("Category", ["category_vals", "category_column_names"])
+
 def __get_numeric__(ds: pd.Series) -> List[List[float]]:
     return [[float(x) for x in ds]]
 
-def get_belongs_to_collection(ds: pd.DataFrame) -> List[List[int]]:
-    return [[1 if d else 0 for d in ds["belongs_to_collection"]]]
+def get_belongs_to_collection(df: pd.DataFrame, names: Tuple[str]) -> Category:
+    assert len(names) == 1
+    return Category([[1 if d else 0 for d in df[names[0]]]], names)
 
-def get_budget(ds: pd.DataFrame) -> List[List[float]]:
-    return __get_numeric__(ds["budget"])
+def get_budget(df: pd.DataFrame, names: Tuple[str]) -> Category:
+    assert len(names) == 1
+    return Category(__get_numeric__(df[names[0]]), names)
 
-# TODO: I'd suggest using the sklearn.preprocessing.one_hot_encoder OR pandas get_dummies
-# for it. Remember to return results as List[List[int]] (i.e. 0 or 1)
-# https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html
-def get_genres(ds: pd.DataFrame) -> List[List[int]]:
-    # genre_list is stored in a pd.Series -> list -> dict. Actual genre is dict["name"]
-    pass    
+def get_genres(df: pd.DataFrame, names: Tuple[str]) -> Category:
+    assert len(names) == 1
+    genres = list(np.unique([genre_dict["name"] for movie_genre in df[names[0]] for genre_dict in movie_genre]))
+    
+    def get_row(genre_dict_ls: List[Dict[str, str]]) -> List[int]:
+        row = [0] * len(genres)
+        for genre_dict in genre_dict_ls:
+            index = genres.index(genre_dict["name"])
+            row[index] = 1
+        return row
+    
+    return Category(np.array([get_row(movie_genre_ls) for movie_genre_ls in df[names[0]]]).T.tolist(), tuple(genres))
     
 # Features of Interest:
 # Popularity is definitely important, seems to be an aggregate of vote count, # of favorited

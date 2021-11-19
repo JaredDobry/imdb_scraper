@@ -1,8 +1,12 @@
+from typing import Dict, List
 import utils
 import metrics
 import pathlib
+import numpy as np
+from utils import Feature
 from model_runner import ModelRunner
 from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import OneHotEncoder
 
 # import seaborn as sns
 # import pandas as pd
@@ -36,21 +40,20 @@ if __name__ == "__main__":
     ]
         
     feature_tup = (
-        utils.Feature(("budget",), metrics.get_budget),
-        utils.Feature(("belongs_to_collection",), metrics.get_belongs_to_collection),
+        Feature(("budget",), metrics.get_budget),
+        Feature(("belongs_to_collection",), metrics.get_belongs_to_collection),
+        Feature(("genres",), metrics.get_genres),
     )
-
-    # params = {'alpha': np.logspace(start=-9, stop=9, num=500), 'normalize': [True, False]}
-    # model_type = GridSearchCV(Ridge(), params, cv=10)
     
     model_type = LinearRegression(normalize=True)
     model = ModelRunner(model_type, is_grid_search=True)
     model.fit(train_df, feature_tup)
-    model.explain_py(train_df, test_df, 27)
+    model.predict(test_df)
+    # model.explain_py(train_df, test_df, 27)
     
-    print("Views per day predictions: ", model.predict(test_df))
-    print("Training score: ", model.get_score(test_df))
-    model.save(MODEL_PATH/"Hello")
+    # print("Views per day predictions: ", model.predict(test_df))
+    # print("Training score: ", model.get_score(test_df))
+    # model.save(MODEL_PATH/"Hello")
     # print("Best score:", model.get_best_score())
     # print("Best params:", model.get_best_params())
 
@@ -83,3 +86,8 @@ if __name__ == "__main__":
     # bottom, top = ax.get_ylim()
     # ax.set_ylim(bottom + 0.5, top - 0.5)
     # plt.show()
+    
+    # genres_movie = lambda genre_dict_ls: [genre_dict["name"] for genre_dict in genre_dict_ls]
+    # genre_ls = np.array([genres_movie(movie) for movie in train_df.genres], dtype=object).reshape(-1,1)
+    # print(OneHotEncoder().fit_transform(genre_ls))
+    
