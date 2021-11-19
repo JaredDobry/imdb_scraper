@@ -4,9 +4,9 @@ import pathlib
 import sklearn
 import numpy as np
 import pandas as pd
-from typing import Dict, Tuple, Any
 from lime import lime_tabular
 import matplotlib.pyplot as plt
+from typing import Dict, Tuple, Any, List
 
 class ModelRunner:
     def __init__(self, model: sklearn.base.BaseEstimator, is_grid_search: bool=False, prediction_col: str="views_per_day") -> None:
@@ -58,18 +58,21 @@ class ModelRunner:
         self.__check_fit()
         return self.model.best_score_
     
-    def __get_explainer(self, train_df: pd.DataFrame, test_df: pd.DataFrame, row: int, num_samples: int) -> Any:
+    def __get_explainer(self, train_df: pd.DataFrame, test_df: pd.DataFrame, rows: Tuple[int], num_samples: int) -> Any:
         train = self.__get_feature_arr(train_df) 
         test = self.__get_feature_arr(test_df)
         explainer = lime_tabular.LimeTabularExplainer(train, mode='regression', feature_names=self.feature_names)
-        return explainer.explain_instance(test[row], self.model.predict, num_features=len(self.feature_names), num_samples=num_samples)
+        for row in rows:
+            yield explainer.explain_instance(test[row], self.model.predict, num_features=len(self.feature_names), num_samples=num_samples)
     
-    def explain_py(self, train_df: pd.DataFrame, test_df: pd.DataFrame, row: int=0, num_samples: int=10000) -> None:
-        self.__get_explainer(train_df, test_df, row, num_samples).as_pyplot_figure()
-        plt.show()
+    def explain_py(self, train_df: pd.DataFrame, test_df: pd.DataFrame, rows: Tuple[int]=(0), num_samples: int=10000) -> None:        
+        for explainer in self.__get_explainer(train_df, test_df, rows, num_samples):
+            explainer.as_pyplot_figure()
+            plt.show()
         
-    def explain_notebook(self, train_df: pd.DataFrame, test_df: pd.DataFrame, row: int=0, num_samples: int=10000):
-        self.__get_explainer(train_df, test_df, row, num_samples).show_in_notebook()
+    def explain_notebook(self, train_df: pd.DataFrame, test_df: pd.DataFrame, rows: Tuple[int]=(0), num_samples: int=10000):
+        for explainer in self.__get_explainer(train_df, test_df, rows, num_samples):
+            explainer.show_in_notebook()
         
     def save(self, file: pathlib.Path) -> None:        
         abs_path = str(file)
