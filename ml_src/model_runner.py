@@ -4,8 +4,9 @@ import pathlib
 import sklearn
 import numpy as np
 import pandas as pd
-from typing import Tuple, Any
-
+from typing import Dict, Tuple, Any
+from lime import lime_tabular
+import matplotlib.pyplot as plt
 
 class ModelRunner:
     def __init__(self, model: sklearn.base.BaseEstimator, is_grid_search: bool=False, prediction_col: str="views_per_day") -> None:
@@ -30,33 +31,47 @@ class ModelRunner:
         self.feature_tup = feature_tup
         X = self.__get_feature_arr(df, disp_warning=True)
         y = self.__get_y(df)
+        self.feature_names = [", ".join(feature.feature_keys) for feature in feature_tup]        
         self.model.fit(X, y)
         
     def predict(self, df: pd.DataFrame) -> np.ndarray:
         X = self.__get_feature_arr(df)
         return self.model.predict(X)
     
-    def score(self, df: pd.DataFrame) -> float:
+    def get_score(self, df: pd.DataFrame) -> float:
         X = self.__get_feature_arr(df)
         y = self.__get_y(df)
         return self.model.score(X, y)
     
-    def get_cv_results(self):
+    def get_cv_results(self) -> Any:
         assert self.is_grid_search
         self.__check_fit()
         return self.model.cv_results_
     
-    def get_best_params(self):
+    def get_best_params(self) -> Dict:
         assert self.is_grid_search
         self.__check_fit()
         return self.model.best_params_
     
-    def get_best_score(self):
+    def get_best_score(self) -> float:
         assert self.is_grid_search
         self.__check_fit()
         return self.model.best_score_
     
-    def save(self, file: pathlib.Path):
+    def __get_explainer(self, train_df: pd.DataFrame, test_df: pd.DataFrame, row: int, num_samples: int) -> Any:
+        train = self.__get_feature_arr(train_df) 
+        test = self.__get_feature_arr(test_df)
+        explainer = lime_tabular.LimeTabularExplainer(train, mode='regression', feature_names=self.feature_names)
+        return explainer.explain_instance(test[row], self.model.predict, num_features=len(self.feature_names), num_samples=num_samples)
+    
+    def explain_py(self, train_df: pd.DataFrame, test_df: pd.DataFrame, row: int=0, num_samples: int=10000) -> None:
+        self.__get_explainer(train_df, test_df, row, num_samples).as_pyplot_figure()
+        plt.show()
+        
+    def explain_notebook(self, train_df: pd.DataFrame, test_df: pd.DataFrame, row: int=0, num_samples: int=10000):
+        self.__get_explainer(train_df, test_df, row, num_samples).show_in_notebook()
+        
+    def save(self, file: pathlib.Path) -> None:        
         abs_path = str(file)
         if not abs_path.endswith(".pickle"):
             abs_path += ".pickle"
