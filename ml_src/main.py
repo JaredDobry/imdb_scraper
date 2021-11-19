@@ -2,11 +2,8 @@ import utils
 import metrics
 import pathlib
 from model_runner import ModelRunner
-from sklearn.linear_model import LinearRegression, Ridge
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.model_selection import GridSearchCV
-from sklearn.base import BaseEstimator
-import numpy as np
+from sklearn.linear_model import LinearRegression
+
 # import seaborn as sns
 # import pandas as pd
 # import matplotlib.pyplot as plt
@@ -49,9 +46,11 @@ if __name__ == "__main__":
     model_type = LinearRegression(normalize=True)
     model = ModelRunner(model_type, is_grid_search=True)
     model.fit(train_df, feature_tup)
+    model.explain_py(train_df, test_df, 27)
     
     print("Views per day predictions: ", model.predict(test_df))
-    print("Training score: ", model.score(test_df))
+    print("Training score: ", model.get_score(test_df))
+    model.save(MODEL_PATH/"Hello")
     # print("Best score:", model.get_best_score())
     # print("Best params:", model.get_best_params())
 
