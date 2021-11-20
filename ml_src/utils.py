@@ -5,6 +5,7 @@ import pandas as pd
 from numbers import Real
 from collections import namedtuple
 from typing import Any, List, Tuple
+from metrics import Category
 
 Feature = namedtuple('Feature', ["feature_keys", "handle"])
 
@@ -19,7 +20,7 @@ def unpickle_df(file: pathlib.Path) -> pd.DataFrame:
     return pd.DataFrame(unpickle_file(file))
 
 def get_training_nparray(df: pd.DataFrame, training_features: Tuple[Feature], disp_warning=False) -> Tuple[np.ndarray, List[str]]:    
-    def get_prepped_arr(feature: Feature) -> List[List[Real]]:
+    def get_prepped_arr(feature: Feature) -> Category:
         handle = feature.handle
         feature_keys = feature.feature_keys  
         category = handle(df[[feature for feature in feature_keys]], feature_keys)
@@ -33,8 +34,7 @@ def get_training_nparray(df: pd.DataFrame, training_features: Tuple[Feature], di
             if non_zero_count < 0.9*len_arr:
                 print(f"WARNING: the **{feature_keys}** training feature has nonzero results in only "
                     f"{round(100*non_zero_count/len_arr, 2)}% of data points. Are you sure you want to use it?")
-        
-        return category.category_vals, category.category_column_names
+        return category
     
     training_names = []
     training_ls = []

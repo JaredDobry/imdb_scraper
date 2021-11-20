@@ -19,7 +19,7 @@ class ModelRunner:
         if not self.is_fit:
             raise NotImplementedError("Model must be fit before it can be trained.")
        
-    def __get_feature_arr(self, df: pd.DataFrame, disp_warning=False) -> np.ndarray:
+    def __get_feature_arr(self, df: pd.DataFrame, disp_warning=False) -> Tuple[np.ndarray, List[str]]:
         self.__check_fit()
         return utils.get_training_nparray(df, self.feature_tup, disp_warning)
     
@@ -31,16 +31,29 @@ class ModelRunner:
         self.feature_tup = feature_tup
         X, self.feature_names = self.__get_feature_arr(df, disp_warning=True)
         y = self.__get_y(df)
-        self.feature_names = [", ".join(feature.feature_keys) for feature in feature_tup]        
         self.model.fit(X, y)
         
-    def __check_feature_names(self, feature_names: List[str]) -> None:
-        if feature_names != self.feature_names:
+    def __check_same_feature_names(self, feature_names: List[str]) -> None:
+        # I.e. if there are any feature names in the testing data that aren't in the training data
+        if set(feature_names) - set(self.feature_names):
             raise AttributeError(f"Testing attributes ({feature_names}) don't line up with trained feature names ({self.feature_names}).")
+        elif set(self.feature_names) - set(feature_names):
+            return False
+        return True
                 
+    def __reorder_matrix(self, feature_mat: np.ndarray, feature_names: List[str]):
+        feature_ls = feature_mat.T.tolist()
+        additional_features = list(set(self.feature_names) - set(feature_names))
+        num_rows = len(feature_ls[0])
+        for additional_feature in additional_features:
+            index = self.feature_names.index(additional_feature)
+            feature_ls.insert(index, [0] * num_rows)
+        return np.array(feature_ls).T
+            
     def predict(self, df: pd.DataFrame) -> np.ndarray:
         X, feature_names = self.__get_feature_arr(df)
-        self.__check_feature_names(feature_names)
+        if not self.__check_same_feature_names(feature_names):
+            X = self.__reorder_matrix(X, feature_names)
         return self.model.predict(X)
     
     def get_score(self, df: pd.DataFrame) -> float:
