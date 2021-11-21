@@ -48,6 +48,9 @@ class ModelRunner:
         for additional_feature in additional_features:
             index = self.feature_names.index(additional_feature)
             feature_ls.insert(index, [0] * num_rows)
+            feature_names.insert(index, additional_feature)
+        if feature_names != self.feature_names:
+                raise AttributeError(f"Testing attributes ({feature_names}) don't line up with trained feature names ({self.feature_names}).")
         return np.array(feature_ls).T
             
     def predict(self, df: pd.DataFrame) -> np.ndarray:
@@ -57,7 +60,9 @@ class ModelRunner:
         return self.model.predict(X)
     
     def get_score(self, df: pd.DataFrame) -> float:
-        X = self.__get_feature_arr(df)
+        X, feature_names = self.__get_feature_arr(df)
+        if not self.__check_same_feature_names(feature_names):
+            X = self.__reorder_matrix(X, feature_names)
         y = self.__get_y(df)
         return self.model.score(X, y)
     
