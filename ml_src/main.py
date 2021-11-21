@@ -21,7 +21,7 @@ if __name__ == "__main__":
     test_df = utils.unpickle_df(DB_PATH/"test_movies.pickle")  
 
     # The lines below will give you info about every column
-    # print(train_df.info())
+    print(train_df.info())
     # print(test_df.info())
 
     drop_ls = [
@@ -38,17 +38,24 @@ if __name__ == "__main__":
         "production_countries",
         "status",
     ]
-        
+
     feature_tup = (
-        Feature(("budget",), metrics.get_budget),
+        Feature(("budget",), metrics.get_numeric),
         Feature(("belongs_to_collection",), metrics.get_belongs_to_collection),
         Feature(("genres",), metrics.get_genres),
+        Feature(("original_language",), metrics.get_original_language),
+        Feature(("popularity",), metrics.get_numeric),
+        Feature(("release_date",), metrics.get_release_year),
+        Feature(("revenue",), metrics.get_numeric),
+        Feature(("runtime",), metrics.get_numeric),
+        Feature(("spoken_languages",), metrics.get_num_spoken_languages),
+        Feature(("vote_average", "vote_count",), metrics.get_vote_popularity),
     )
     
     model_type = LinearRegression(normalize=True)
     model = ModelRunner(model_type, is_grid_search=True)
     model.fit(train_df, feature_tup)
-    model.predict(test_df)
+    # model.predict(test_df)
     # model.explain_py(train_df, test_df, 27)
     
     # print("Views per day predictions: ", model.predict(test_df))

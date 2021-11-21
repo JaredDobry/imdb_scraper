@@ -3,6 +3,7 @@ import pandas as pd
 from collections import namedtuple
 from typing import List, Dict, Tuple
 
+Feature = namedtuple('Feature', ["feature_keys", "handle"])
 Category = namedtuple("Category", ["category_vals", "category_column_names"])
 
 def get_numeric(df: pd.DataFrame, names: Tuple[str]) -> Category:
@@ -32,7 +33,7 @@ def get_original_language(df: pd.DataFrame, names: Tuple[str]) -> Category:
 
 def get_release_year(df: pd.DataFrame, names: Tuple[str]) -> Category:
     assert len(names) == 1
-    return Category([[1950 if date == "null" else int(date.partition("-")[0]) for date in df[names[0]]]], names)
+    return Category([[1949 if date == "null" else int(date.partition("-")[0]) for date in df[names[0]]]], names)
    
 def get_num_spoken_languages(df: pd.DataFrame, names: Tuple[str]) -> Category:
     assert len(names) == 1

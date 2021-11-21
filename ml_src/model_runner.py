@@ -4,6 +4,7 @@ import pathlib
 import sklearn
 import numpy as np
 import pandas as pd
+from metrics import Feature
 from lime import lime_tabular
 import matplotlib.pyplot as plt
 from typing import Dict, Tuple, Any, List
@@ -26,7 +27,7 @@ class ModelRunner:
     def __get_y(self, df: pd.DataFrame) -> np.ndarray:
         return df[self.prediction_col]
         
-    def fit(self, df: pd.DataFrame, feature_tup: Tuple[utils.Feature]) -> None:
+    def fit(self, df: pd.DataFrame, feature_tup: Tuple[Feature]) -> None:
         self.is_fit = True
         self.feature_tup = feature_tup
         X, self.feature_names = self.__get_feature_arr(df, disp_warning=True)
@@ -41,7 +42,7 @@ class ModelRunner:
             return False
         return True
                 
-    def __reorder_matrix(self, feature_mat: np.ndarray, feature_names: List[str]):
+    def __reorder_matrix(self, feature_mat: np.ndarray, feature_names: List[str]) -> np.ndarray:
         feature_ls = feature_mat.T.tolist()
         additional_features = list(set(self.feature_names) - set(feature_names))
         num_rows = len(feature_ls[0])
@@ -93,7 +94,7 @@ class ModelRunner:
             explainer.as_pyplot_figure()
             plt.show()
         
-    def explain_notebook(self, train_df: pd.DataFrame, test_df: pd.DataFrame, rows: Tuple[int]=(0), num_samples: int=10000):
+    def explain_notebook(self, train_df: pd.DataFrame, test_df: pd.DataFrame, rows: Tuple[int]=(0), num_samples: int=10000) -> None:
         for explainer in self.__get_explainer(train_df, test_df, rows, num_samples):
             explainer.show_in_notebook()
         

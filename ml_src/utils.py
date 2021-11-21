@@ -5,9 +5,7 @@ import pandas as pd
 from numbers import Real
 from collections import namedtuple
 from typing import Any, List, Tuple
-from metrics import Category
-
-Feature = namedtuple('Feature', ["feature_keys", "handle"])
+from metrics import Category, Feature
 
 def unpickle_file(file: pathlib.Path) -> Any:
     abs_path = str(file)
