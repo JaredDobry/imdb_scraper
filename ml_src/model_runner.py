@@ -85,7 +85,7 @@ class ModelRunner:
     def __get_explainer(self, train_df: pd.DataFrame, test_df: pd.DataFrame, rows: Tuple[int], num_samples: int) -> Any:
         train = self.__get_feature_arr(train_df) 
         test = self.__get_feature_arr(test_df)
-        explainer = lime_tabular.LimeTabularExplainer(train, mode='regression', feature_names=self.feature_names)
+        explainer = lime_tabular.LimeTabularExplainer(train, mode='regression', feature_names=list(self.feature_names))
         for row in rows:
             yield explainer.explain_instance(test[row], self.model.predict, num_features=len(self.feature_names), num_samples=num_samples)
     
