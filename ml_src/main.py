@@ -1,15 +1,16 @@
 import argparse
-from typing import Dict, List
+from typing import Dict, List, Tuple, Union
 import ml_src.utils as utils
 import ml_src.metrics as metrics
 import pathlib
 import numpy as np
 from tmdb_scraper.scraper import load_json
-from ml_src.utils import Feature
+from ml_src.utils import Feature, unpickle_file
 from ml_src.model_runner import ModelRunner
 from sklearn.linear_model import LinearRegression
 import logging
 from sklearn.preprocessing import OneHotEncoder
+from sklearn.metrics import accuracy_score
 
 # import seaborn as sns
 import pandas as pd
@@ -24,51 +25,137 @@ parser = argparse.ArgumentParser()
 parser.add_argument("training", type=str)
 parser.add_argument("testing", type=str)
 
-KEY_TO_TYPE_DICT = {
+
+def thin_dataframe(
+    dataframe: pd.DataFrame, keys: List[str], in_place: bool = True
+) -> Union[None, pd.DataFrame]:
+    discard = []
+    for key in dataframe.columns:
+        if key not in keys:
+            discard.append(key)
+    out = dataframe.drop(columns=discard, inplace=in_place)
+    return out
+
+
+def drop_rows_on_cond(dataframe: pd.DataFrame, key: str) -> pd.DataFrame:
+    if KEY_TYPE_CONVERSION[key][1] == "is_zero":
+        for item in dataframe:
+            if item[key] == 0:
+                dataframe.drop(index=item.index, inplace=True)
+
+    return dataframe
+
+
+def is_zero(val) -> bool:
+    if val == 0:
+        return True
+    if type(val) == str and val == "0":
+        return True
+    return False
+
+
+def is_none(val) -> bool:
+    if val is None:
+        return True
+    if type(val) == str and val.lower() == "none":
+        return True
+    return False
+
+
+def clean_data(
+    data: List[Dict], keys: List[str], target_key: str
+) -> Tuple[List[List], List]:
+    x = []
+    y = []
+    for item in data:
+        drop_me = False
+        features = []
+        target_val = None
+        for key in item.keys():
+            if key == target_key:  # Must have a valid target key value
+                target_val = KEY_TYPE_CONVERSION[key][0](item[key])
+                if KEY_TYPE_CONVERSION[key][1](target_val):
+                    drop_me = True
+                    break
+            elif key in keys:  # Do we care to process
+                converted = KEY_TYPE_CONVERSION[key][0](item[key])
+                if KEY_TYPE_CONVERSION[key][1](converted):
+                    drop_me = True
+                    break
+                else:
+                    features.append(converted)
+        if drop_me or target_val is None:
+            continue
+        else:
+            x.append(features)
+            y.append(target_val)
+    return x, y
+
+
+# key: (conversion function, drop function)
+KEY_TYPE_CONVERSION = {
     "belongs_to_collection": bool,
-    "budget": int,
+    "budget": (int, is_zero),
     "genres": List,  # One hot
     "id": int,
     "imdb_id": int,
     "overview": str,
-    "popularity": float,
+    "popularity": (float, is_none),
     "production_companies": List,  # One hot?
     "production_countries": bool,  # Made in USA or elsewhere
     "release_date": int,
-    "revenue": int,
+    "revenue": (int, is_zero),
     "runtime": int,
     "spoken_languages": bool,  # One hot?
     "title": str,
-    "vote_average": float,
-    "vote_count": int,
+    "views_per_day": (float, is_none),
+    "vote_average": (float, is_none),
+    "vote_count": (int, is_zero),
 }
 
 
-def model_pipeline(training_filepath: str, testing_filepath: str, keys: List[str]):
+def model_pipeline(
+    training_filepath: str, testing_filepath: str, keys: List[str], target_key: str
+):
     # Load data
     if pathlib.Path(training_filepath).suffix == ".pickle":
-        training_data = utils.unpickle_df(pathlib.Path(training_filepath))
+        training_data = unpickle_file(pathlib.Path(training_filepath))
     elif pathlib.Path(training_filepath).suffix == ".json":
-        training_data = pd.DataFrame(load_json(training_filepath))
+        training_data = load_json(training_filepath)
     else:
         raise TypeError("Only .pickle and .json files supported")
 
     if pathlib.Path(testing_filepath).suffix == ".pickle":
-        testing_data = utils.unpickle_df(pathlib.Path(testing_filepath))
+        testing_data = unpickle_file(pathlib.Path(testing_filepath))
     elif pathlib.Path(testing_filepath).suffix == ".json":
         testing_data = load_json(testing_filepath)
     else:
         raise TypeError("Only .pickle and .json files supported")
     logging.info("Files loaded successfully")
 
-    # Thin data to the requested keys
-    logging.info(f"Training model using keys: {keys}")
+    # Data Cleaning
+    logging.info(f"Cleaning data")
+
+    x, y = clean_data(training_data, keys, target_key)
+
+    logging.info("Running classifier")
+    clf = LinearRegression()
+    clf.fit(x, y)
+
+    # Scoring
+    x, y = clean_data(testing_data, keys, target_key)
+
+    logging.info("Scoring classifier")
+    score = clf.score(x, y)
+    logging.info(f"Classifier got score: {score}")
 
 
 def train_model():
     logging.basicConfig(level=logging.INFO)
     args = parser.parse_args()
-    model_pipeline(args.training, args.testing)
+
+    keys = ["budget", "revenue"]
+    model_pipeline(args.training, args.testing, keys, "views_per_day")
 
 
 if __name__ == "__main__":
