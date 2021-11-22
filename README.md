@@ -33,3 +33,6 @@ Where ***id_file** is a file full of json objects with a field "id" defined that
 Run via poetry using:<br>
 ***poetry run merge <from\> <to\> <is_blacklist\>***<br>
 Where ***from*** is loaded along with ***to***, and the difference of ***from - to*** is appended to ***to***. ***is_blacklist*** specifies whether the file is a blacklist file, you can specify using True, true, T, t, or 1. Any other input evaluates to False.
+
+## Dependencies 
+1. lime (pip install lime)
