@@ -8,25 +8,10 @@ from multiprocessing import Process, Queue, Event
 from queue import Empty
 from collections import deque
 import time
-from typing import Union
+from typing import List, Dict, Union
 
 
 NUM_WORKERS = 4
-
-
-parser = argparse.ArgumentParser()
-parser.add_argument(
-    "json_path", help="The path to the TMDb json archive to pull movies from", type=str
-)
-parser.add_argument(
-    "out_file", help="The filename/path to file you want to write to", type=str
-)
-parser.add_argument("api_key", help="Your API key", type=str)
-parser.add_argument("n", help="Number of movies to pull info for", type=int)
-parser.add_argument(
-    "--progress_bar", type=bool, default=True, help="Flag to display progress bar"
-)
-args = parser.parse_args()
 write_cache = []
 
 
@@ -91,19 +76,42 @@ def worker(work_queue: Queue, output_queue: Queue, kill: Event, idle: Event):
             continue
 
 
+def load_json(filepath: str, dict_entry: str = None) -> Union[List[Dict], List]:
+    logging.info(f"Loading json file {filepath}")
+    output = []
+    fr = open(filepath, "r")
+    while line := fr.readline():
+        output.append(json.loads(line)[dict_entry]) if dict_entry else output.append(
+            json.loads(line)
+        )
+    fr.close()
+    logging.info("Json dump loaded")
+    return output
+
+
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "json_path",
+        help="The path to the TMDb json archive to pull movies from",
+        type=str,
+    )
+    parser.add_argument(
+        "out_file", help="The filename/path to file you want to write to", type=str
+    )
+    parser.add_argument("api_key", help="Your API key", type=str)
+    parser.add_argument("n", help="Number of movies to pull info for", type=int)
+    parser.add_argument(
+        "--progress_bar", type=bool, default=True, help="Flag to display progress bar"
+    )
+    args = parser.parse_args()
+
     logging.basicConfig(level=logging.INFO)
     logging.info("TMDb scraper setup")
     tmdb.API_KEY = args.api_key
 
     # Load the json dump
-    logging.info("Loading json dump")
-    to_get = []
-    fr = open(args.json_path, "r")
-    while line := fr.readline():
-        to_get.append(json.loads(line)["id"])
-    fr.close()
-    logging.info("Json dump loaded")
+    to_get = load_json(args.json_path)
 
     # Open the output file if it exists to check where we are progress wise
     count = 0
