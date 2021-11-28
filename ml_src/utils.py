@@ -3,7 +3,7 @@ import pathlib
 import numpy as np
 import pandas as pd
 from typing import Any, List, Tuple
-from ml_src.metrics import Category, Feature
+from metrics import Category, Feature
 
 
 def unpickle_file(file: pathlib.Path) -> Any:
@@ -50,10 +50,9 @@ def get_training_nparray(
     return np.array(training_ls).T, training_names
 
 
-def append_good_rows(df: pd.DataFrame,n):
+def rm_rows_missing_data(df: pd.DataFrame, n: int) -> pd.DataFrame:
     
-    train_df = pd.DataFrame()
-    for _,row in df.iterrows():
+    def strikes_lt_n(row: pd.Series) -> bool:
         strikes = 0
 
         if row["budget"] == "0":
@@ -77,8 +76,8 @@ def append_good_rows(df: pd.DataFrame,n):
         year = row["release_date"].partition("-")[0]
         if year == "null" or int(year) < 1950:
             strikes +=1
-        
-        if strikes < n:  
-            train_df = train_df.append(row, ignore_index=True)
             
-    return train_df
+        return strikes < n
+    
+    strikes_lt_n_ls = np.array([strikes_lt_n(row) for _, row in df.iterrows()], dtype=bool)
+    return df.loc[strikes_lt_n_ls, :]
