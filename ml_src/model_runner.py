@@ -1,12 +1,13 @@
-import ml_src.utils as utils
+import utils
 import pickle
 import pathlib
 import sklearn
 import numpy as np
 import pandas as pd
-from ml_src.metrics import Feature
+from metrics import Feature
 from lime import lime_tabular
 import matplotlib.pyplot as plt
+from joblib import parallel_backend
 from typing import Dict, Tuple, Any, List
 
 
@@ -35,12 +36,13 @@ class ModelRunner:
     def __get_y(self, df: pd.DataFrame) -> np.ndarray:
         return df[self.prediction_col]
 
-    def fit(self, df: pd.DataFrame, feature_tup: Tuple[Feature]) -> None:
+    def fit(self, df: pd.DataFrame, feature_tup: Tuple[Feature], threads: int=4) -> None:
         self.is_fit = True
         self.feature_tup = feature_tup
         X, self.feature_names = self.__get_feature_arr(df, disp_warning=True)
         y = self.__get_y(df)
-        self.model.fit(X, y)
+        with parallel_backend('threading', n_jobs=threads):
+            self.model.fit(X, y)
 
     def __check_same_feature_names(self, feature_names: List[str]) -> None:
         # I.e. if there are any feature names in the testing data that aren't in the training data
