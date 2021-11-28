@@ -2,8 +2,6 @@ import pickle
 import pathlib
 import numpy as np
 import pandas as pd
-from numbers import Real
-from collections import namedtuple
 from typing import Any, List, Tuple
 from ml_src.metrics import Category, Feature
 
@@ -51,36 +49,36 @@ def get_training_nparray(
     assert len(training_ls) == len(training_names)
     return np.array(training_ls).T, training_names
 
+
 def append_good_rows(df: pd.DataFrame,n):
     
     train_df = pd.DataFrame()
     for _,row in df.iterrows():
         strikes = 0
 
-        if int(row["budget"]) == 0:
-            strikes +=1
+        if row["budget"] == "0":
+            strikes += 1
 
-        if int(row["revenue"]) == 0:
-            strikes +=1
+        if row["revenue"] == "0":
+            strikes += 1
 
-        if int(row["runtime"]) == 0:
-            strikes +=1
+        if ["runtime"] == "0":
+            strikes += 1
 
         if not row["genres"]:
-            strikes +=1
+            strikes += 1
 
         if not row["spoken_languages"]:
-            strikes +=1
+            strikes += 1
 
         if not row["original_language"]:
-            strikes +=1
+            strikes += 1
 
         year = row["release_date"].partition("-")[0]
-        if year == "null" or int(year) <1950:
+        if year == "null" or int(year) < 1950:
             strikes +=1
         
         if strikes < n:  
-            # print("appending")
-            train_df = train_df.append(row,ignore_index=True)
+            train_df = train_df.append(row, ignore_index=True)
             
     return train_df
