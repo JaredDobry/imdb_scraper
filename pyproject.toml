@@ -23,7 +23,7 @@ pytest = "^5.2"
 scrape_imdb = "imdb_scraper.scraper:main"
 scrape_tmdb = "tmdb_scraper.scraper:main"
 merge = "imdb_scraper.merge:merge"
-train = "ml_src.main:train_model"
+train = "ml_src.main:main"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

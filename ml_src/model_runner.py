@@ -1,10 +1,10 @@
-import utils
+from ml_src.utils import get_training_nparray, unpickle_file
 import pickle
 import pathlib
 import sklearn
 import numpy as np
 import pandas as pd
-from metrics import Feature
+from ml_src.metrics import Feature
 from lime import lime_tabular
 import matplotlib.pyplot as plt
 from joblib import parallel_backend
@@ -31,17 +31,19 @@ class ModelRunner:
         self, df: pd.DataFrame, disp_warning=False
     ) -> Tuple[np.ndarray, List[str]]:
         self.__check_fit()
-        return utils.get_training_nparray(df, self.feature_tup, disp_warning)
+        return get_training_nparray(df, self.feature_tup, disp_warning)
 
     def __get_y(self, df: pd.DataFrame) -> np.ndarray:
         return df[self.prediction_col]
 
-    def fit(self, df: pd.DataFrame, feature_tup: Tuple[Feature], threads: int=4) -> None:
+    def fit(
+        self, df: pd.DataFrame, feature_tup: Tuple[Feature], threads: int = 4
+    ) -> None:
         self.is_fit = True
         self.feature_tup = feature_tup
         X, self.feature_names = self.__get_feature_arr(df, disp_warning=True)
         y = self.__get_y(df)
-        with parallel_backend('threading', n_jobs=threads):
+        with parallel_backend("threading", n_jobs=threads):
             self.model.fit(X, y)
 
     def __check_same_feature_names(self, feature_names: List[str]) -> None:
@@ -149,4 +151,4 @@ class ModelRunner:
 
 
 def load_model(file: pathlib.Path) -> ModelRunner:
-    return utils.unpickle_file(file)
+    return unpickle_file(file)

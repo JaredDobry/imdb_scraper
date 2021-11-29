@@ -1,99 +1,33 @@
 import argparse
-from typing import Dict, List, Tuple, Union
-import ml_src.utils as utils
-import ml_src.metrics as metrics
-import pathlib
-import numpy as np
-from tmdb_scraper.scraper import load_json
-from ml_src.utils import Feature, unpickle_file
-from ml_src.model_runner import ModelRunner
-from sklearn.linear_model import LinearRegression
 import logging
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.metrics import accuracy_score
+from json import loads
+from os import mkdir
+from os.path import exists
+from typing import List, Dict, Tuple
+from random import seed, randint
+from sklearn import linear_model
+from pathlib import Path
+from datetime import datetime
 
-# import seaborn as sns
-import pandas as pd
-
-# import matplotlib.pyplot as plt
-
-PARENT_PATH = pathlib.Path("__dir__").parent.resolve()
-DB_PATH = PARENT_PATH / "StaticDB"
-MODEL_PATH = PARENT_PATH / "models"
 
 parser = argparse.ArgumentParser()
-parser.add_argument("training", type=str)
-parser.add_argument("testing", type=str)
+parser.add_argument("filepath", type=str)
+parser.add_argument("split_percent", type=float)
 
 
-def thin_dataframe(
-    dataframe: pd.DataFrame, keys: List[str], in_place: bool = True
-) -> Union[None, pd.DataFrame]:
-    discard = []
-    for key in dataframe.columns:
-        if key not in keys:
-            discard.append(key)
-    out = dataframe.drop(columns=discard, inplace=in_place)
-    return out
-
-
-def drop_rows_on_cond(dataframe: pd.DataFrame, key: str) -> pd.DataFrame:
-    if KEY_TYPE_CONVERSION[key][1] == "is_zero":
-        for item in dataframe:
-            if item[key] == 0:
-                dataframe.drop(index=item.index, inplace=True)
-
-    return dataframe
-
-
-def is_zero(val) -> bool:
-    if val == 0:
+def is_none(item):
+    if item is None:
         return True
-    if type(val) == str and val == "0":
-        return True
+    elif type(item) == str:
+        return item.lower() == "none"
     return False
 
 
-def is_none(val) -> bool:
-    if val is None:
-        return True
-    if type(val) == str and val.lower() == "none":
-        return True
-    return False
+def is_zero(item: int):
+    return item == 0
 
 
-def clean_data(
-    data: List[Dict], keys: List[str], target_key: str
-) -> Tuple[List[List], List]:
-    x = []
-    y = []
-    for item in data:
-        drop_me = False
-        features = []
-        target_val = None
-        for key in item.keys():
-            if key == target_key:  # Must have a valid target key value
-                target_val = KEY_TYPE_CONVERSION[key][0](item[key])
-                if KEY_TYPE_CONVERSION[key][1](target_val):
-                    drop_me = True
-                    break
-            elif key in keys:  # Do we care to process
-                converted = KEY_TYPE_CONVERSION[key][0](item[key])
-                if KEY_TYPE_CONVERSION[key][1](converted):
-                    drop_me = True
-                    break
-                else:
-                    features.append(converted)
-        if drop_me or target_val is None:
-            continue
-        else:
-            x.append(features)
-            y.append(target_val)
-    return x, y
-
-
-# key: (conversion function, drop function)
-KEY_TYPE_CONVERSION = {
+KEY_TABLE = {
     "belongs_to_collection": bool,
     "budget": (int, is_zero),
     "genres": List,  # One hot
@@ -103,142 +37,186 @@ KEY_TYPE_CONVERSION = {
     "popularity": (float, is_none),
     "production_companies": List,  # One hot?
     "production_countries": bool,  # Made in USA or elsewhere
-    "release_date": int,
+    "release_date": (int, is_none),
     "revenue": (int, is_zero),
-    "runtime": int,
+    "runtime": (int, is_zero),
     "spoken_languages": bool,  # One hot?
     "title": str,
     "views_per_day": (float, is_none),
-    "vote_average": (float, is_none),
+    "vote_average": (float, is_zero),
     "vote_count": (int, is_zero),
 }
 
 
-def model_pipeline(
-    training_filepath: str, testing_filepath: str, keys: List[str], target_key: str
-):
-    # Load data
-    if pathlib.Path(training_filepath).suffix == ".pickle":
-        training_data = unpickle_file(pathlib.Path(training_filepath))
-    elif pathlib.Path(training_filepath).suffix == ".json":
-        training_data = load_json(training_filepath)
+def load_data(filepath: str) -> List[Dict]:
+    if not exists(filepath):
+        raise FileNotFoundError
+
+    logging.info(f"Loading data file: {filepath}")
+
+    # Figure out how many lines there are so we can pre-allocate an array
+    lines = 0
+    with open(filepath, "r") as f:
+        for _ in f:
+            lines += 1
+    arr = [{}] * lines
+    logging.info(f"Initialized list of size {lines}")
+
+    # Perform load
+    x = 0
+    with open(filepath, "r") as f:
+        for line in f:
+            arr[x] = loads(line)
+            x += 1
+
+    logging.info("Load complete")
+    return arr
+
+
+def clean_data(data: List[Dict], keys: List[str], target: str) -> List[List]:
+    logging.info("Cleaning data using keys: [")
+    for key in keys:
+        logging.info(key)
+    logging.info(target)
+    logging.info("]")
+
+    cleaned = []
+    for item in data:
+        valid = True
+        for key in item.keys():
+            if key == target and KEY_TABLE[key][1](KEY_TABLE[key][0](item[key])):
+                valid = False
+                break
+            elif key in keys and KEY_TABLE[key][1](KEY_TABLE[key][0](item[key])):
+                valid = False
+                break
+        if valid:
+            pared = []
+            for key in keys:
+                pared.append(KEY_TABLE[key][0](item[key]))
+            pared.append(KEY_TABLE[target][0](item[target]))
+            cleaned.append(pared)
+    logging.info(f"{len(cleaned)} valid data entries being used")
+    return cleaned
+
+
+def partition_data(data: List[List], split: float) -> Tuple[List[List], List[List]]:
+    assert split > 0
+    assert split < 1
+
+    # Need to pre-allocate when working with large datasets
+    test_len = int(split * len(data))
+    train_data = [[]] * (len(data) - int(split * len(data)))
+    test_data = [[]] * test_len
+    logging.info(f"Pre-allocated training array of size: {len(train_data)} and testing array of size: {len(test_data)}")
+
+    train_x = 0
+    test_x = 0
+    for item in data:
+        if test_x == len(test_data):
+            train_data[train_x] = item
+            train_x += 1
+        elif train_x == len(train_data):
+            test_data[test_x] = item
+            test_x += 1
+        else:
+            roll = randint(1, len(data)) <= test_len
+            if roll:
+                test_data[test_x] = item
+                test_x += 1
+            else:
+                train_data[train_x] = item
+                train_x += 1
+
+    logging.info(f"Data partitioned into {len(train_data)} training entries and {len(test_data)} testing entries")
+    return train_data, test_data
+
+
+def data_to_x_y(data: List[List]) -> Tuple[List[List], List[int]]:
+    x = []
+    y = []
+    for item in data:
+        x.append(item[:-1])
+        y.append(item[-1])
+
+    return x, y
+
+
+def train_model(x: List[List], y: List[int], model_class, model_kwargs: dict = None):
+    logging.info(f"Training model: {model_class.__name__}")
+    if model_kwargs:
+        clf = model_class(**model_kwargs)
     else:
-        raise TypeError("Only .pickle and .json files supported")
-
-    if pathlib.Path(testing_filepath).suffix == ".pickle":
-        testing_data = unpickle_file(pathlib.Path(testing_filepath))
-    elif pathlib.Path(testing_filepath).suffix == ".json":
-        testing_data = load_json(testing_filepath)
-    else:
-        raise TypeError("Only .pickle and .json files supported")
-    logging.info("Files loaded successfully")
-
-    # Data Cleaning
-    logging.info(f"Cleaning data")
-
-    x, y = clean_data(training_data, keys, target_key)
-
-    logging.info("Running classifier")
-    clf = LinearRegression()
+        clf = model_class()
     clf.fit(x, y)
-
-    # Scoring
-    x, y = clean_data(testing_data, keys, target_key)
-
-    logging.info("Scoring classifier")
-    score = clf.score(x, y)
-    logging.info(f"Classifier got score: {score}")
+    logging.info("Training complete")
+    return clf
 
 
-def train_model():
+def score_model(x: List[List], y: List[int], model_object):
+    return model_object.score(x, y)
+
+
+def write_file(data: List[List], filepath: Path):
+    with open(filepath, "w") as f:
+        first = True
+        for item in data:
+            if first:
+                first = False
+            else:
+                f.write('\n')
+            f.write(str(item))
+
+
+def main():
     logging.basicConfig(level=logging.INFO)
     args = parser.parse_args()
+    seed()
 
-    keys = ["budget", "revenue"]
-    model_pipeline(args.training, args.testing, keys, "views_per_day")
+    # Load data
+    data = load_data(args.filepath)
+
+    # Clean data
+    keys = ["budget", "revenue", "vote_average", "vote_count"]
+    target = "popularity"
+    cleaned = clean_data(data, keys, target)
+
+    # Partition data
+    train_data, test_data = partition_data(cleaned, args.split_percent)
+    train_x, train_y = data_to_x_y(train_data)
+    test_x, test_y = data_to_x_y(test_data)
+
+    # Create folder for model output
+    date_str = datetime.now().strftime('%Y_%m_%d_%H_%M_%S')
+    folder_path = Path(__file__).parent.parent.joinpath(f"models/{date_str}")
+    mkdir(folder_path)
+
+    models = [(linear_model.LinearRegression, None),
+              (linear_model.Ridge, {"alpha": 0.5}),
+              (linear_model.Lasso, {"max_iter": 10000, "alpha": 0.1}),
+              (linear_model.ElasticNet, {"max_iter": 10000, "alpha": 1.0, "l1_ratio": 0.5}),
+              (linear_model.Lars, None)]
+
+    for model_class, model_args in models:
+        # Train model
+        model = train_model(x=train_x, y=train_y, model_class=model_class, model_kwargs=model_args)
+
+        # Score model
+        score = score_model(test_x, test_y, model)
+
+        logging.info(f"Model {model_class.__name__} got score: {score}")
+
+        # Version
+        model_folder_path = folder_path.joinpath(f"{model_class.__name__}")
+        mkdir(model_folder_path)
+
+        write_file(train_data, model_folder_path.joinpath("training_data.txt"))
+        write_file(test_data, model_folder_path.joinpath("testing_data.txt"))
+        with open(model_folder_path.joinpath("results.txt"), "w") as f:
+            f.write(f"{score}")
+        with open(model_folder_path.joinpath("keys.txt"), "w") as f:
+            f.write(f"{keys}")
 
 
 if __name__ == "__main__":
-    train_df = utils.unpickle_df(DB_PATH / "train_movies.pickle")
-    test_df = utils.unpickle_df(DB_PATH / "test_movies.pickle")
-
-    # The lines below will give you info about every column
-    # print(train_df.info())
-    # print(test_df.info())
-
-    drop_ls = [
-        "id",
-        "tmdb_id",
-        "imdb_id",
-        "title",
-        "original_title",
-        "adult",
-        "homepage",
-        "overview",
-        "poster_path",
-        "production_companies",
-        "production_countries",
-        "status",
-    ]
-
-    feature_tup = (
-        Feature(("budget",), metrics.get_numeric),
-        Feature(("belongs_to_collection",), metrics.get_belongs_to_collection),
-        Feature(("genres",), metrics.get_genres),
-        Feature(("original_language",), metrics.get_original_language),
-        Feature(("popularity",), metrics.get_numeric),
-        Feature(("release_date",), metrics.get_release_year),
-        Feature(("revenue",), metrics.get_numeric),
-        Feature(("runtime",), metrics.get_numeric),
-        Feature(("spoken_languages",), metrics.get_num_spoken_languages),
-        Feature(
-            (
-                "vote_average",
-                "vote_count",
-            ),
-            metrics.get_vote_popularity,
-        ),
-    )
-
-    model_type = LinearRegression(normalize=True)
-    model = ModelRunner(model_type, is_grid_search=True)
-    model.fit(train_df, feature_tup)
-    # model.predict(test_df)
-    # model.explain_py(train_df, test_df, 27)
-
-    print("Views per day predictions: ", model.predict(test_df))
-    print("Training score: ", model.get_score(test_df))
-    model.save(MODEL_PATH / "Hello")
-    print("Best score:", model.get_best_score())
-    print("Best params:", model.get_best_params())
-
-    # print(50*"=")
-
-    # model_type = Ridge(0.4, normalize=True)
-    # model2 = ModelRunner(model_type)
-    # model2.fit(train_df, feature_tup)
-    # print("Views per day predictions: ", model2.predict(test_df))
-    # print("Training score: ", model2.score(test_df))
-
-    # This line will print all the "genres" column
-    # print(train_df["genres"])
-
-    # This line will show you all of the different possibilities for the spoken language category
-    # print(train_df["spoken_languages"].value_counts())
-
-    # IGNORE. Gives a heat map of how features correlate together.
-    # genres = pd.get_dummies(train_df["genres"], drop_first=True)
-    # train_df = pd.concat([train_df, genres], axis=1)
-    # print(train_df)
-    # ax = sns.set_context('paper')
-    # ax = plt.figure(figsize=(7,7))
-    # feature_df = train_df[feature_ls]
-    # corr = feature_df.corr()
-    # ax = sns.heatmap(corr, annot=True)
-    # bottom, top = ax.get_ylim()
-    # ax.set_ylim(bottom + 0.5, top - 0.5)
-    # plt.show()
-
-    # genres_movie = lambda genre_dict_ls: [genre_dict["name"] for genre_dict in genre_dict_ls]
-    # genre_ls = np.array([genres_movie(movie) for movie in train_df.genres], dtype=object).reshape(-1,1)
-    # print(OneHotEncoder().fit_transform(genre_ls))
+    main()
