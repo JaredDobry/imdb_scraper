@@ -175,7 +175,8 @@ def write_file(data: List[List], filepath: Path):
 def main():
     logging.basicConfig(level=logging.INFO)
     args = parser.parse_args()
-    seed()
+    rand_seed = 10
+    seed(rand_seed)
 
     # Load data
     data = load_data(args.filepath)
@@ -224,6 +225,8 @@ def main():
             f.write(f"{score}")
         with open(model_folder_path.joinpath("keys.txt"), "w") as f:
             f.write(f"{keys}")
+        with open(model_folder_path.joinpath("seed.txt"), "w") as f:
+            f.write(f"{rand_seed}")
 
 
 if __name__ == "__main__":
