@@ -108,7 +108,9 @@ def partition_data(data: List[List], split: float) -> Tuple[List[List], List[Lis
     test_len = int(split * len(data))
     train_data = [[]] * (len(data) - int(split * len(data)))
     test_data = [[]] * test_len
-    logging.info(f"Pre-allocated training array of size: {len(train_data)} and testing array of size: {len(test_data)}")
+    logging.info(
+        f"Pre-allocated training array of size: {len(train_data)} and testing array of size: {len(test_data)}"
+    )
 
     train_x = 0
     test_x = 0
@@ -128,7 +130,9 @@ def partition_data(data: List[List], split: float) -> Tuple[List[List], List[Lis
                 train_data[train_x] = item
                 train_x += 1
 
-    logging.info(f"Data partitioned into {len(train_data)} training entries and {len(test_data)} testing entries")
+    logging.info(
+        f"Data partitioned into {len(train_data)} training entries and {len(test_data)} testing entries"
+    )
     return train_data, test_data
 
 
@@ -164,7 +168,7 @@ def write_file(data: List[List], filepath: Path):
             if first:
                 first = False
             else:
-                f.write('\n')
+                f.write("\n")
             f.write(str(item))
 
 
@@ -187,19 +191,23 @@ def main():
     test_x, test_y = data_to_x_y(test_data)
 
     # Create folder for model output
-    date_str = datetime.now().strftime('%Y_%m_%d_%H_%M_%S')
+    date_str = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
     folder_path = Path(__file__).parent.parent.joinpath(f"models/{date_str}")
     mkdir(folder_path)
 
-    models = [(linear_model.LinearRegression, None),
-              (linear_model.Ridge, {"alpha": 0.5}),
-              (linear_model.Lasso, {"max_iter": 10000, "alpha": 0.1}),
-              (linear_model.ElasticNet, {"max_iter": 10000, "alpha": 1.0, "l1_ratio": 0.5}),
-              (linear_model.Lars, None)]
+    models = [
+        (linear_model.LinearRegression, None),
+        (linear_model.Ridge, {"alpha": 0.5}),
+        (linear_model.Lasso, {"max_iter": 10000, "alpha": 0.1}),
+        (linear_model.ElasticNet, {"max_iter": 10000, "alpha": 1.0, "l1_ratio": 0.5}),
+        (linear_model.Lars, None),
+    ]
 
     for model_class, model_args in models:
         # Train model
-        model = train_model(x=train_x, y=train_y, model_class=model_class, model_kwargs=model_args)
+        model = train_model(
+            x=train_x, y=train_y, model_class=model_class, model_kwargs=model_args
+        )
 
         # Score model
         score = score_model(test_x, test_y, model)
