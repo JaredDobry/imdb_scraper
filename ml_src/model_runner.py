@@ -44,6 +44,15 @@ class ModelRunner:
         with parallel_backend('threading', n_jobs=threads):
             self.model.fit(X, y)
 
+    @staticmethod
+    def get_corr_matrix(df: pd.DataFrame, feature_tup: Tuple[Feature], output_feature: str) -> pd.Series:
+        X, feature_names = utils.get_training_nparray(df, feature_tup, True)
+        X_df = pd.DataFrame(X, columns=feature_names)
+        return X_df.corrwith(pd.Series(df[output_feature], name=output_feature))
+    
+    def instance_get_corr_matrix(self, df: pd.DataFrame) -> pd.Series:
+        return ModelRunner.get_corr_matrix(df, self.feature_tup, self.prediction_col)
+
     def __check_same_feature_names(self, feature_names: List[str]) -> None:
         # I.e. if there are any feature names in the testing data that aren't in the training data
         if set(feature_names) - set(self.feature_names):
