@@ -14,7 +14,7 @@ def get_numeric(df: pd.DataFrame, names: Tuple[str]) -> Category:
 
 def get_belongs_to_collection(df: pd.DataFrame, names: Tuple[str]) -> Category:
     assert len(names) == 1
-    return Category([[1 if d else 0 for d in df[names[0]]]], names)
+    return Category([[1 if d else 0 for d in df[names[0]]]], ("belongs_to_collection",))
 
 
 def get_genres(df: pd.DataFrame, names: Tuple[str]) -> Category:
@@ -47,7 +47,7 @@ def get_genres(df: pd.DataFrame, names: Tuple[str]) -> Category:
 def get_original_language(df: pd.DataFrame, names: Tuple[str]) -> Category:
     assert len(names) == 1
     return Category(
-        [list(map(int, (df["original_language"] == "en").to_list()))], names
+        [list(map(int, (df["original_language"] == "en").to_list()))], ("lang_orig_is_English",)
     )
 
 
@@ -60,13 +60,13 @@ def get_release_year(df: pd.DataFrame, names: Tuple[str]) -> Category:
                 for date in df[names[0]]
             ]
         ],
-        names,
+        ("release_year",),
     )
 
 
 def get_num_spoken_languages(df: pd.DataFrame, names: Tuple[str]) -> Category:
     assert len(names) == 1
-    return Category([[len(d_ls) for d_ls in df[names[0]]]], names)
+    return Category([[len(d_ls) for d_ls in df[names[0]]]], ("num_spoken_langs",))
 
 
 def get_vote_popularity(df: pd.DataFrame, names: Tuple[str]) -> Category:
