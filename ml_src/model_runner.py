@@ -67,6 +67,7 @@ class ModelRunner:
         if feature_names != self.feature_names:
             raise AttributeError(
                 f"Testing attributes ({feature_names}) don't line up with trained feature names ({self.feature_names})."
+                "Make sure any One Hot Encoded features are sorted."
             )
         return np.array(feature_ls).T
 
@@ -136,7 +137,8 @@ class ModelRunner:
         rows: Tuple[int] = (0),
         num_samples: int = 10000,
     ) -> None:
-        for explainer in self.__get_explainer(train_df, test_df, rows, num_samples):
+        for index, explainer in enumerate(self.__get_explainer(train_df, test_df, rows, num_samples)):
+            print("True Prediction Val:", self.__get_y(test_df.iloc[rows[index]]))
             explainer.show_in_notebook()
 
     def save(self, file: pathlib.Path) -> None:
