@@ -5,9 +5,10 @@ from os import mkdir
 from os.path import exists
 from typing import List, Dict, Tuple
 from random import seed, randint
-from sklearn import linear_model
+from sklearn import ensemble, linear_model, metrics
 from pathlib import Path
 from datetime import datetime
+from numpy import sqrt
 
 
 parser = argparse.ArgumentParser()
@@ -202,6 +203,7 @@ def main():
         (linear_model.Lasso, {"max_iter": 10000, "alpha": 0.1}),
         (linear_model.ElasticNet, {"max_iter": 10000, "alpha": 1.0, "l1_ratio": 0.5}),
         (linear_model.Lars, None),
+        (ensemble.RandomForestRegressor, None),
     ]
 
     for model_class, model_args in models:
@@ -211,9 +213,12 @@ def main():
         )
 
         # Score model
-        score = score_model(test_x, test_y, model)
+        pred_y = model.predict(test_x)
 
-        logging.info(f"Model {model_class.__name__} got score: {score}")
+        logging.info(f"Model {model_class.__name__} got scores:")
+        logging.info(f"Mean absolute error: {metrics.mean_absolute_error(test_y, pred_y)}")
+        logging.info(f"Mean squared error: {metrics.mean_squared_error(test_y, pred_y)}")
+        logging.info(f"Root mean squared error: {sqrt(metrics.mean_squared_error(test_y, pred_y))}")
 
         # Version
         model_folder_path = folder_path.joinpath(f"{model_class.__name__}")
@@ -222,7 +227,9 @@ def main():
         write_file(train_data, model_folder_path.joinpath("training_data.txt"))
         write_file(test_data, model_folder_path.joinpath("testing_data.txt"))
         with open(model_folder_path.joinpath("results.txt"), "w") as f:
-            f.write(f"{score}")
+            f.write(f"{metrics.mean_absolute_error(test_y, pred_y)}")
+            f.write(f"{metrics.mean_squared_error(test_y, pred_y)}")
+            f.write(f"{sqrt(metrics.mean_squared_error(test_y, pred_y))}")
         with open(model_folder_path.joinpath("keys.txt"), "w") as f:
             f.write(f"{keys}")
         with open(model_folder_path.joinpath("seed.txt"), "w") as f:
