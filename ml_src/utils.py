@@ -1,3 +1,4 @@
+import random
 import pickle
 import pathlib
 import numpy as np
@@ -81,3 +82,13 @@ def rm_rows_missing_data(df: pd.DataFrame, n: int) -> pd.DataFrame:
     
     strikes_lt_n_ls = np.array([strikes_lt_n(row) for _, row in df.iterrows()], dtype=bool)
     return df.loc[strikes_lt_n_ls, :]
+
+def train_test_split(df: pd.DataFrame, test_percent: int, seed: int=42) -> Tuple[pd.DataFrame, pd.DataFrame]:
+    len_df = len(df)
+    num_test = test_percent*len_df//100
+    all_indeces = range(len_df)
+    random.seed(seed)
+    indeces_test = set(random.sample(all_indeces, k=num_test))
+    bool_list_test = [index in indeces_test for index in all_indeces]
+    bool_list_train = [not test for test in bool_list_test]
+    return df[bool_list_train], df[bool_list_test]
