@@ -34,7 +34,7 @@ class ModelRunner:
         return utils.get_training_nparray(df, self.feature_tup, disp_warning)
 
     def __get_y(self, df: pd.DataFrame) -> np.ndarray:
-        return df[self.prediction_col]
+        return df[self.prediction_col].astype(float)
 
     def fit(self, df: pd.DataFrame, feature_tup: Tuple[Feature], threads: int=4) -> None:
         self.is_fit = True
@@ -48,7 +48,7 @@ class ModelRunner:
     def get_corr_matrix(df: pd.DataFrame, feature_tup: Tuple[Feature], output_feature: str) -> pd.Series:
         X, feature_names = utils.get_training_nparray(df, feature_tup, True)
         X_df = pd.DataFrame(X, columns=feature_names)
-        return X_df.corrwith(pd.Series(df[output_feature], name=output_feature))
+        return X_df.corrwith(pd.Series(df[output_feature], name=output_feature, dtype=float))
     
     def instance_get_corr_matrix(self, df: pd.DataFrame) -> pd.Series:
         return ModelRunner.get_corr_matrix(df, self.feature_tup, self.prediction_col)
