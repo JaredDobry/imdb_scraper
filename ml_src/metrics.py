@@ -73,7 +73,7 @@ def get_vote_popularity(df: pd.DataFrame, names: Tuple[str]) -> Category:
     assert len(names) == 2
     return Category(
         [[float(count) * float(avg) for count, avg in zip(df[names[0]], df[names[1]])]],
-        names,
+        ("vote_popularity",),
     )
 
 
