@@ -3,7 +3,9 @@ import pickle
 import pathlib
 import numpy as np
 import pandas as pd
-from typing import Any, List, Tuple
+from json import loads
+from os.path import exists
+from typing import Any, Dict, List, Tuple
 from metrics import Category, Feature
 
 
@@ -15,8 +17,35 @@ def unpickle_file(file: pathlib.Path) -> Any:
         return pickle.load(f)
 
 
+def load_json(file: pathlib.Path) -> List[Dict]:
+    if not exists(file):
+        raise FileNotFoundError
+
+    # Figure out how many lines there are so we can pre-allocate an array
+    lines = 0
+    with open(file, "r") as f:
+        for _ in f:
+            lines += 1
+    arr = [{}] * lines
+
+    # Perform load
+    x = 0
+    with open(file, "r") as f:
+        for line in f:
+            entry = loads(line)
+            if entry["release_date"] == '':
+                entry["release_date"] = 'null'
+            arr[x] = entry
+            x += 1
+    return arr
+
+
 def unpickle_df(file: pathlib.Path) -> pd.DataFrame:
     return pd.DataFrame(unpickle_file(file))
+
+
+def load_df(file: pathlib.Path) -> pd.DataFrame:
+    return pd.DataFrame(load_json(file))
 
 
 def get_training_nparray(
