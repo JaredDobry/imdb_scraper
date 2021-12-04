@@ -17,7 +17,7 @@ def unpickle_file(file: pathlib.Path) -> Any:
         return pickle.load(f)
 
 
-def load_json(file: pathlib.Path) -> List[Dict]:
+def load_json(file: pathlib.Path) -> pd.DataFrame:
     if not exists(file):
         raise FileNotFoundError
 
@@ -37,7 +37,7 @@ def load_json(file: pathlib.Path) -> List[Dict]:
                 entry["release_date"] = 'null'
             arr[x] = entry
             x += 1
-    return arr
+    return pd.DataFrame(arr)
 
 
 def unpickle_df(file: pathlib.Path) -> pd.DataFrame:
@@ -85,13 +85,13 @@ def rm_rows_missing_data(df: pd.DataFrame, n: int) -> pd.DataFrame:
     def strikes_lt_n(row: pd.Series) -> bool:
         strikes = 0
 
-        if row["budget"] == "0":
+        if int(row["budget"]) == 0:
             strikes += 1
 
-        if row["revenue"] == "0":
+        if int(row["revenue"]) == 0:
             strikes += 1
 
-        if ["runtime"] == "0":
+        if float(row["runtime"]) == 0:
             strikes += 1
 
         if not row["genres"]:
@@ -100,8 +100,8 @@ def rm_rows_missing_data(df: pd.DataFrame, n: int) -> pd.DataFrame:
         if not row["spoken_languages"]:
             strikes += 1
 
-        if not row["original_language"]:
-            strikes += 1
+        # if not row["original_language"]:
+        #     strikes += 1
 
         year = row["release_date"].partition("-")[0]
         if year == "null" or int(year) < 1950:
