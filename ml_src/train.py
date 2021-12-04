@@ -7,9 +7,7 @@ import numpy as np
 from typing import Dict
 from datetime import datetime
 from model_runner import ModelRunner
-from sklearn.linear_model import Ridge
 from sklearn.model_selection import GridSearchCV
-from sklearn.linear_model import LinearRegression
 
 PARENT_PATH = pathlib.Path("__dir__").parent.resolve()
 DB_PATH = PARENT_PATH / "StaticDB"
