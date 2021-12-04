@@ -7,7 +7,10 @@ import numpy as np
 from typing import Dict
 from datetime import datetime
 from model_runner import ModelRunner
+from sklearn.tree import DecisionTreeRegressor
 from sklearn.model_selection import GridSearchCV
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.linear_model import LinearRegression, Ridge
 
 PARENT_PATH = pathlib.Path("__dir__").parent.resolve()
 DB_PATH = PARENT_PATH / "StaticDB"
@@ -17,8 +20,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("regressor", choices=["L", "Linear",
                                           "R", "Ridge",
                                           "DT", "Decision Tree", 
-                                          "RF", "Random Forest", 
-                                          "SVM", "Linear SVM"],
+                                          "RF", "Random Forest"],
                     help="Regressor training model")
 
 parser.add_argument("-g", action="store_true", help="If the flag is listed, grid search will be applied.")
@@ -34,21 +36,18 @@ def get_model_dict(regressor_type: str) -> Dict:
     model_dict = {}
     if regressor_type == "L" or regressor_type == "Linear":
         # Linear Regression
-        from sklearn.linear_model import LinearRegression
         model_dict["model_type"] = LinearRegression(normalize=True)
         model_dict["empty_model_type"] = LinearRegression
         model_dict["params"] = {"normalize": [True, False]}
         model_dict["model_name"] = "LinearRegression"
     elif regressor_type == "R" or regressor_type == "Ridge":
         # Ridge Regression
-        from sklearn.linear_model import Ridge
         model_dict["model_type"] = Ridge(alpha=.14, normalize=True)
         model_dict["empty_model_type"] = Ridge
         model_dict["params"] = {"alpha": np.logspace(-9, 9, num=1000), "normalize": [True, False]}
         model_dict["model_name"] = "RidgeRegression"
     elif regressor_type == "DT" or regressor_type == "Decision Tree":
         # Decision Tree Regressor
-        from sklearn.tree import DecisionTreeRegressor
         model_dict["model_type"] = DecisionTreeRegressor(max_depth=8, max_features='auto', max_leaf_nodes=50, min_samples_leaf=5, min_weight_fraction_leaf=0, splitter='best')
         model_dict["params"] = {
             "splitter": ["best"],
@@ -62,7 +61,6 @@ def get_model_dict(regressor_type: str) -> Dict:
         model_dict["model_name"] = "DecisionTreeRegressor"
     elif regressor_type == "RF" or regressor_type == "Random Forest":
         # Random Forest Regressor
-        from sklearn.ensemble import RandomForestRegressor
         model_dict["model_type"] = RandomForestRegressor(max_depth=8, max_features="auto", max_leaf_nodes=50, min_samples_leaf=20)
         model_dict["params"] = {
             "max_depth": np.linspace(1, 15, 5, dtype=int),                      # max depth of tree
@@ -72,19 +70,6 @@ def get_model_dict(regressor_type: str) -> Dict:
         }
         model_dict["empty_model_type"] = RandomForestRegressor
         model_dict["model_name"] = "RandomForestRegressor"
-    elif regressor_type == "SVM" or regressor_type == "Linear SVM":
-        # Support Vector Machine (SVM) Regressor
-        from sklearn.svm import LinearSVR
-        model_dict["model_type"] = LinearSVR(epsilon=1e-1, tol=0.1, C=2, max_iter=5000)
-        model_dict["params"] = {
-            "tol": np.linspace(1e-5, 1e-3, 5, dtype=float),
-            "epsilon": np.linspace(0.00001, 1e-2, 5, dtype=float),
-            "C": np.linspace(1, 10, 3, dtype=int),
-            "fit_intercept": [True, False],
-            "intercept_scaling": np.linspace(1, 10, 5, dtype=int),    
-        }
-        model_dict["empty_model_type"] = LinearSVR
-        model_dict["model_name"] = "SVMRegressor"
     
     return model_dict
 
