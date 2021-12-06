@@ -47,7 +47,7 @@ def unpickle_df(file: pathlib.Path) -> pd.DataFrame:
 def load_df(file: pathlib.Path) -> pd.DataFrame:
     return pd.DataFrame(load_json(file))
 
-
+# The most important function in repo. Builds an numpy matrix from a dataframe bases on the "feature tuple"
 def get_training_nparray(
     df: pd.DataFrame, training_features: Tuple[Feature], disp_warning=False
 ) -> Tuple[np.ndarray, List[str]]:
@@ -79,7 +79,7 @@ def get_training_nparray(
     assert len(training_ls) == len(training_names)
     return np.array(training_ls).T, training_names
 
-
+# Strike system. If a datapoint is missing more than n realistic values, cut it out from the data.
 def rm_rows_missing_data(df: pd.DataFrame, n: int) -> pd.DataFrame:
     
     def strikes_lt_n(row: pd.Series) -> bool:
@@ -112,6 +112,7 @@ def rm_rows_missing_data(df: pd.DataFrame, n: int) -> pd.DataFrame:
     strikes_lt_n_ls = np.array([strikes_lt_n(row) for _, row in df.iterrows()], dtype=bool)
     return df.loc[strikes_lt_n_ls, :]
 
+# Train test split on a dataframe directly
 def train_test_split(df: pd.DataFrame, test_percent: int, seed: int=42) -> Tuple[pd.DataFrame, pd.DataFrame]:
     len_df = len(df)
     num_test = test_percent*len_df//100

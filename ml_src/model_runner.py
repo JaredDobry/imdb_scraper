@@ -53,6 +53,7 @@ class ModelRunner:
     def instance_get_corr_matrix(self, df: pd.DataFrame) -> pd.Series:
         return ModelRunner.get_corr_matrix(df, self.feature_tup, self.prediction_col)
 
+    # Ensure that the testing feature names are identical to training
     def __check_same_feature_names(self, feature_names: List[str]) -> None:
         # I.e. if there are any feature names in the testing data that aren't in the training data
         if set(feature_names) - set(self.feature_names):
@@ -63,6 +64,7 @@ class ModelRunner:
             return False
         return True
 
+    # Reorder matrix if feature names are out of order or some needed to be added intothe test matrix
     def __reorder_matrix(
         self, feature_mat: np.ndarray, feature_names: List[str]
     ) -> np.ndarray:
@@ -93,16 +95,19 @@ class ModelRunner:
         y = self.__get_y(df)
         return self.model.score(X, y)
 
+    # Get cv results from a grid search
     def get_cv_results(self) -> Any:
         assert self.is_grid_search
         self.__check_fit()
         return self.model.cv_results_
 
+    # Get the best parameters from a grid search
     def get_best_params(self) -> Dict:
         assert self.is_grid_search
         self.__check_fit()
         return self.model.best_params_
 
+    # Get best cross validation score from a grid search
     def get_best_score(self) -> float:
         assert self.is_grid_search
         self.__check_fit()
@@ -128,6 +133,7 @@ class ModelRunner:
                 num_samples=num_samples,
             )
 
+    # For python scripts
     def explain_py(
         self,
         train_df: pd.DataFrame,
@@ -139,6 +145,7 @@ class ModelRunner:
             explainer.as_pyplot_figure()
             plt.show()
 
+    # For jupyter notebook scripts
     def explain_notebook(
         self,
         train_df: pd.DataFrame,
@@ -150,6 +157,7 @@ class ModelRunner:
             print("True Prediction Val:", self.__get_y(test_df.iloc[rows[index]]))
             explainer.show_in_notebook()
 
+    # Save model runner instance as pickle
     def save(self, file: pathlib.Path) -> None:
         abs_path = str(file)
         if not abs_path.endswith(".pickle"):
@@ -158,6 +166,6 @@ class ModelRunner:
         with open(abs_path, "ab") as f:
             pickle.dump(self, f)
 
-
+# Load pickled model runner
 def load_model(file: pathlib.Path) -> ModelRunner:
     return utils.unpickle_file(file)

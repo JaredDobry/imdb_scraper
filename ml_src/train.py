@@ -12,10 +12,15 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import LinearRegression, Ridge
 
+"""
+This script trains a model given a training model. -g adds a grid search and -s saves the model.
+"""
+
 PARENT_PATH = pathlib.Path("__dir__").parent.resolve()
 DB_PATH = PARENT_PATH / "StaticDB"
 MODEL_PATH = PARENT_PATH / "models"
 
+# Command line options
 parser = argparse.ArgumentParser()
 parser.add_argument("regressor", choices=["L", "Linear",
                                           "R", "Ridge",
@@ -26,12 +31,14 @@ parser.add_argument("regressor", choices=["L", "Linear",
 parser.add_argument("-g", action="store_true", help="If the flag is listed, grid search will be applied.")
 parser.add_argument("-s", action="store_true", help="If present, will save model in models folder.")
 
+# Utility func. Seperates print outs
 def print_w_sep(*args) -> None:
     print("\n", 50 * "-", sep="")
     for arg in args:
         print(arg)
     print(50 * "-")
 
+# Ugly function that chooses a model based on user input.
 def get_model_dict(regressor_type: str) -> Dict:
     model_dict = {}
     if regressor_type == "L" or regressor_type == "Linear":
