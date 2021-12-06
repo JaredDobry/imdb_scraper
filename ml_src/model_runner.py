@@ -34,7 +34,7 @@ class ModelRunner:
         return utils.get_training_nparray(df, self.feature_tup, disp_warning)
 
     def __get_y(self, df: pd.DataFrame) -> np.ndarray:
-        return df[self.prediction_col].astype(float)
+        return np.array(df[self.prediction_col]).astype(float)
 
     def fit(self, df: pd.DataFrame, feature_tup: Tuple[Feature], threads: int=4) -> None:
         self.is_fit = True
