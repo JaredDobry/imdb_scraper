@@ -9,6 +9,7 @@ from queue import Empty
 from collections import deque
 import time
 from typing import List, Dict, Union
+from requests.exceptions import HTTPError
 
 
 NUM_WORKERS = 4
@@ -39,8 +40,11 @@ def kill_handler(_, __):
 
 
 def get_movie(movie_id: int) -> Union[dict, None]:
-    movie = tmdb.Movies(movie_id)
-    response = movie.info()
+    try:
+        movie = tmdb.Movies(movie_id)
+        response = movie.info()
+    except HTTPError:
+        return None
     if response["adult"]:
         return None
     return {
@@ -49,7 +53,7 @@ def get_movie(movie_id: int) -> Union[dict, None]:
         "genres": response["genres"],
         "id": response["id"],
         "imdb_id": response["imdb_id"],
-        "overview": response["overview"],
+        "original_language": response["original_language"],
         "popularity": response["popularity"],
         "production_companies": response["production_companies"],
         "production_countries": response["production_countries"],
@@ -78,15 +82,27 @@ def worker(work_queue: Queue, output_queue: Queue, kill: Event, idle: Event):
 
 def load_json(filepath: str, dict_entry: str = None) -> Union[List[Dict], List]:
     logging.info(f"Loading json file {filepath}")
-    output = []
-    fr = open(filepath, "r")
-    while line := fr.readline():
-        output.append(json.loads(line)[dict_entry]) if dict_entry else output.append(
-            json.loads(line)
-        )
-    fr.close()
+
+    if not os.path.exists(filepath):
+        raise FileNotFoundError
+
+    # Figure out how many lines there are so we can pre-allocate an array
+    lines = 0
+    with open(filepath, "r") as f:
+        for _ in f:
+            lines += 1
+    arr = [{}] * lines
+
+    # Perform load
+    x = 0
+    with open(filepath, "r") as f:
+        for line in f:
+            entry = json.loads(line)[dict_entry] if dict_entry else json.loads(line)
+            arr[x] = entry
+            x += 1
+
     logging.info("Json dump loaded")
-    return output
+    return arr
 
 
 def main():
@@ -111,7 +127,7 @@ def main():
     tmdb.API_KEY = args.api_key
 
     # Load the json dump
-    to_get = load_json(args.json_path)
+    to_get = load_json(args.json_path, "id")
 
     # Open the output file if it exists to check where we are progress wise
     count = 0
