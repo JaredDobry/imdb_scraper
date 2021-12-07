@@ -8,7 +8,7 @@ from multiprocessing import Process, Queue, Event
 from queue import Empty
 from collections import deque
 import time
-from typing import List, Dict, Union
+from typing import List, Dict, Set, Union
 from requests.exceptions import HTTPError
 
 
@@ -93,6 +93,8 @@ def load_json(filepath: str, dict_entry: str = None) -> Union[List[Dict], List]:
             lines += 1
     arr = [{}] * lines
 
+    logging.info(f"Pre-allocated array of size {lines}")
+
     # Perform load
     x = 0
     with open(filepath, "r") as f:
@@ -103,6 +105,38 @@ def load_json(filepath: str, dict_entry: str = None) -> Union[List[Dict], List]:
 
     logging.info("Json dump loaded")
     return arr
+
+
+def load_only_ids(filepath: str) -> List[int]:
+    logging.info(f"Loading json file {filepath}")
+
+    if not os.path.exists(filepath):
+        raise FileNotFoundError
+
+    # Figure out how many lines there are so we can pre-allocate an array
+    lines = 0
+    with open(filepath, "r") as f:
+        for _ in f:
+            lines += 1
+    arr = [{}] * lines
+
+    logging.info(f"Pre-allocated array of size {lines}")
+
+    # Perform load
+    x = 0
+    target = ', "id": '
+    with open(filepath, "r") as f:
+        for line in f:
+            sub = line[line.index(target) + len(target):line.index(target) + len(target) + 7]
+            arr[x] = int(sub[:sub.index(',')])
+            x += 1
+
+    logging.info("Json dump loaded")
+    return arr
+
+
+def remove_processed(possible: List[int], processed: List[int]) -> Set[int]:
+    return set(possible) - set(processed)
 
 
 def main():
@@ -127,23 +161,17 @@ def main():
     tmdb.API_KEY = args.api_key
 
     # Load the json dump
-    to_get = load_json(args.json_path, "id")
+    to_get = [int(i) for i in load_json(args.json_path, "id")]
 
     # Open the output file if it exists to check where we are progress wise
     count = 0
     if os.path.exists(args.out_file) and os.path.isfile(args.out_file):
         logging.info(f"Reading {args.out_file}")
-        processed_ids = []
-        fr = open(args.out_file, "r")
-        while line := fr.readline():
-            processed_ids.append(json.loads(line)["id"])
-        fr.close()
+        processed_ids = load_only_ids(args.out_file)
 
         # Diff the progress we already made from to_get
-        for movie_id in to_get:
-            if movie_id in processed_ids:
-                to_get.remove(movie_id)
-                count += 1
+        to_get = remove_processed(to_get, processed_ids)
+        count = len(to_get)
         logging.info(f"Done processing existing data. {count} entries existed.")
 
     # Process setup
